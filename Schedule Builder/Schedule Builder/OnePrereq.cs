@@ -20,7 +20,8 @@ namespace Schedule_Builder
         private void AddPrereq_Click(object sender, EventArgs e)
         {
             //Open the Two Prereqs form saving the text information that existed in the current fields. 
-
+            ScheduleBuilderApplicationContext.getAppContext().RunForm(new TwoPrereqs(CourseAbbreviation.Text, CourseValue.Text, CrHours.Text, Fall.Checked, Spring.Checked, Summer.Checked, PrereqCourseAbbreviation.Text, PrereqCourseValue.Text ));
+            this.Close();
         }
 
     }

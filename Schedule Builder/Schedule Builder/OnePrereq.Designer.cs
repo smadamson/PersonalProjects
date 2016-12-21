@@ -31,9 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.OfferedFall = new System.Windows.Forms.CheckBox();
-            this.OfferedSpring = new System.Windows.Forms.CheckBox();
-            this.OfferedSummer = new System.Windows.Forms.CheckBox();
+            this.Fall = new System.Windows.Forms.CheckBox();
+            this.Spring = new System.Windows.Forms.CheckBox();
+            this.Summer = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.CourseAbbreviation = new System.Windows.Forms.TextBox();
@@ -76,35 +76,35 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Cr Hours";
             // 
-            // OfferedFall
+            // Fall
             // 
-            this.OfferedFall.AutoSize = true;
-            this.OfferedFall.Location = new System.Drawing.Point(295, 38);
-            this.OfferedFall.Name = "OfferedFall";
-            this.OfferedFall.Size = new System.Drawing.Size(42, 17);
-            this.OfferedFall.TabIndex = 3;
-            this.OfferedFall.Text = "Fall";
-            this.OfferedFall.UseVisualStyleBackColor = true;
+            this.Fall.AutoSize = true;
+            this.Fall.Location = new System.Drawing.Point(295, 38);
+            this.Fall.Name = "Fall";
+            this.Fall.Size = new System.Drawing.Size(42, 17);
+            this.Fall.TabIndex = 3;
+            this.Fall.Text = "Fall";
+            this.Fall.UseVisualStyleBackColor = true;
             // 
-            // OfferedSpring
+            // Spring
             // 
-            this.OfferedSpring.AutoSize = true;
-            this.OfferedSpring.Location = new System.Drawing.Point(295, 61);
-            this.OfferedSpring.Name = "OfferedSpring";
-            this.OfferedSpring.Size = new System.Drawing.Size(56, 17);
-            this.OfferedSpring.TabIndex = 4;
-            this.OfferedSpring.Text = "Spring";
-            this.OfferedSpring.UseVisualStyleBackColor = true;
+            this.Spring.AutoSize = true;
+            this.Spring.Location = new System.Drawing.Point(295, 61);
+            this.Spring.Name = "Spring";
+            this.Spring.Size = new System.Drawing.Size(56, 17);
+            this.Spring.TabIndex = 4;
+            this.Spring.Text = "Spring";
+            this.Spring.UseVisualStyleBackColor = true;
             // 
-            // OfferedSummer
+            // Summer
             // 
-            this.OfferedSummer.AutoSize = true;
-            this.OfferedSummer.Location = new System.Drawing.Point(295, 84);
-            this.OfferedSummer.Name = "OfferedSummer";
-            this.OfferedSummer.Size = new System.Drawing.Size(64, 17);
-            this.OfferedSummer.TabIndex = 5;
-            this.OfferedSummer.Text = "Summer";
-            this.OfferedSummer.UseVisualStyleBackColor = true;
+            this.Summer.AutoSize = true;
+            this.Summer.Location = new System.Drawing.Point(295, 84);
+            this.Summer.Name = "Summer";
+            this.Summer.Size = new System.Drawing.Size(64, 17);
+            this.Summer.TabIndex = 5;
+            this.Summer.Text = "Summer";
+            this.Summer.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -235,9 +235,9 @@
             this.Controls.Add(this.CourseAbbreviation);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.OfferedSummer);
-            this.Controls.Add(this.OfferedSpring);
-            this.Controls.Add(this.OfferedFall);
+            this.Controls.Add(this.Summer);
+            this.Controls.Add(this.Spring);
+            this.Controls.Add(this.Fall);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -253,9 +253,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox OfferedFall;
-        private System.Windows.Forms.CheckBox OfferedSpring;
-        private System.Windows.Forms.CheckBox OfferedSummer;
+        private System.Windows.Forms.CheckBox Fall;
+        private System.Windows.Forms.CheckBox Spring;
+        private System.Windows.Forms.CheckBox Summer;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox CourseAbbreviation;

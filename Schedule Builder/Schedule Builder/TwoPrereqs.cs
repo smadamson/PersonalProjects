@@ -16,7 +16,21 @@ namespace Schedule_Builder
         {
             InitializeComponent();
         }
+        public TwoPrereqs(string courseAbbr, string courseValue, string crHours, bool fall, bool spring, bool summer, string prCourseAbbr, string prCourseValue)
+        {
 
+            InitializeComponent();
+
+            CourseAbbr.Text = courseAbbr;
+            CourseValue.Text = courseValue;
+            CrHours.Text = crHours;
+            Fall.Checked = fall;
+            Spring.Checked = spring;
+            Summer.Checked = summer;
+            Prereq1CourseAbbr.Text = prCourseAbbr;
+            Prereq1CourseValue.Text = prCourseValue;
+
+        }
         private void AddAnother_Click(object sender, EventArgs e)
         {
             //Open ThreePreqs form maintaing text fields values

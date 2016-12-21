@@ -229,7 +229,6 @@
             this.Prereq2CourseValue.Name = "Prereq2CourseValue";
             this.Prereq2CourseValue.Size = new System.Drawing.Size(67, 20);
             this.Prereq2CourseValue.TabIndex = 42;
-            this.Prereq2CourseValue.Text = "1030";
             // 
             // Prereq2CourseAbbr
             // 
@@ -237,7 +236,6 @@
             this.Prereq2CourseAbbr.Name = "Prereq2CourseAbbr";
             this.Prereq2CourseAbbr.Size = new System.Drawing.Size(65, 20);
             this.Prereq2CourseAbbr.TabIndex = 41;
-            this.Prereq2CourseAbbr.Text = "CS";
             // 
             // label9
             // 
