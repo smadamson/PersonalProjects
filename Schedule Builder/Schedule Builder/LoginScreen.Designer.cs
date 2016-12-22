@@ -63,7 +63,6 @@
             this.firstName.Name = "firstName";
             this.firstName.Size = new System.Drawing.Size(100, 20);
             this.firstName.TabIndex = 3;
-            this.firstName.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label2
             // 
@@ -84,7 +83,6 @@
             this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "First Name";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Login
             // 
@@ -94,6 +92,7 @@
             this.Login.TabIndex = 7;
             this.Login.Text = "Login";
             this.Login.UseVisualStyleBackColor = true;
+            this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
             // label4
             // 
@@ -104,7 +103,6 @@
             this.label4.Size = new System.Drawing.Size(75, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "(ie. u0123456)";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // newStudent
             // 
@@ -114,8 +112,9 @@
             this.newStudent.TabIndex = 9;
             this.newStudent.Text = "New Student";
             this.newStudent.UseVisualStyleBackColor = true;
+            this.newStudent.Click += new System.EventHandler(this.newStudent_Click);
             // 
-            // MainScreen
+            // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -128,7 +127,7 @@
             this.Controls.Add(this.firstName);
             this.Controls.Add(this.id);
             this.Controls.Add(this.Welcome);
-            this.Name = "MainScreen";
+            this.Name = "LoginScreen";
             this.Text = "Schedule Builder";
             this.ResumeLayout(false);
             this.PerformLayout();

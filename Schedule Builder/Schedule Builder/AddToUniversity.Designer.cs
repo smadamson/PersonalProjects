@@ -1,6 +1,6 @@
 ﻿namespace Schedule_Builder
 {
-    partial class AddAClass
+    partial class AddToUniversity
     {
         /// <summary>
         /// Required designer variable.
@@ -298,6 +298,7 @@
             this.Cancel.TabIndex = 91;
             this.Cancel.Text = "Cancel and Go Back";
             this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // AddClass
             // 
@@ -309,7 +310,7 @@
             this.AddClass.UseVisualStyleBackColor = true;
             this.AddClass.Click += new System.EventHandler(this.AddClass_Click);
             // 
-            // AddAClass
+            // AddToUniversity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -340,7 +341,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "AddAClass";
+            this.Name = "AddToUniversity";
             this.Text = "Add A Course";
             this.CancelAcceptPanel.ResumeLayout(false);
             this.ResumeLayout(false);

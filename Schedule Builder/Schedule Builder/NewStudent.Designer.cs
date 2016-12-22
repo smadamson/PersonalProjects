@@ -102,7 +102,6 @@
             this.label6.Size = new System.Drawing.Size(103, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "(select all that apply)";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // checkBox1
             // 
@@ -132,7 +131,6 @@
             this.label8.Size = new System.Drawing.Size(95, 13);
             this.label8.TabIndex = 9;
             this.label8.Text = "Bachelors Degree:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -202,6 +200,7 @@
             this.AddMasters.TabIndex = 17;
             this.AddMasters.Text = "Add A Masters";
             this.AddMasters.UseVisualStyleBackColor = true;
+            this.AddMasters.Click += new System.EventHandler(this.AddMasters_Click);
             // 
             // submit
             // 
@@ -211,6 +210,7 @@
             this.submit.TabIndex = 18;
             this.submit.Text = "Submit";
             this.submit.UseVisualStyleBackColor = true;
+            this.submit.Click += new System.EventHandler(this.submit_Click);
             // 
             // NewStudent
             // 

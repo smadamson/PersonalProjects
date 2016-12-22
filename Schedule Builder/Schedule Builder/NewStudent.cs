@@ -12,17 +12,39 @@ namespace Schedule_Builder
 {
     public partial class NewStudent : Form
     {
+
         public NewStudent()
         {
             InitializeComponent();
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Generates a NewStudent form with the given id and firstName filled in. 
+        /// </summary>
+        public NewStudent(string id, string firstName)
         {
-
+            InitializeComponent();
+            this.id.Text = id;
+            this.firstName.Text = firstName;
+            this.lastName.Focus();
         }
 
-        private void label8_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Adds this student to the University and opens the students homeScreen. Closes this form.
+        /// </summary>
+        private void submit_Click(object sender, EventArgs e)
+        {
+            //go to home screen for this student.
+            //TODO: add student to the university. 
+            ScheduleBuilderApplicationContext.getAppContext().RunForm(new HomeScreen());
+            this.Close();
+        }
+
+        /// <summary>
+        /// Makes a masters field visible.
+        /// </summary>
+        private void AddMasters_Click(object sender, EventArgs e)
         {
 
         }

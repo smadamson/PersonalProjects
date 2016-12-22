@@ -49,11 +49,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddAClass.cs">
+    <Compile Include="AddToUniversity.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddAClass.Designer.cs">
-      <DependentUpon>AddAClass.cs</DependentUpon>
+    <Compile Include="AddToUniversity.Designer.cs">
+      <DependentUpon>AddToUniversity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCourse.Designer.cs">
+      <DependentUpon>AddCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditMajors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditMajors.Designer.cs">
+      <DependentUpon>EditMajors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeScreen.Designer.cs">
+      <DependentUpon>HomeScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
@@ -61,19 +79,43 @@
     <Compile Include="LoginScreen.Designer.cs">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageCourses.Designer.cs">
+      <DependentUpon>ManageCourses.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewStudent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NewStudent.Designer.cs">
       <DependentUpon>NewStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlanView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanView.Designer.cs">
+      <DependentUpon>PlanView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddAClass.resx">
-      <DependentUpon>AddAClass.cs</DependentUpon>
+    <EmbeddedResource Include="AddToUniversity.resx">
+      <DependentUpon>AddToUniversity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCourse.resx">
+      <DependentUpon>AddCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditMajors.resx">
+      <DependentUpon>EditMajors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeScreen.resx">
+      <DependentUpon>HomeScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageCourses.resx">
+      <DependentUpon>ManageCourses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewStudent.resx">
       <DependentUpon>NewStudent.cs</DependentUpon>

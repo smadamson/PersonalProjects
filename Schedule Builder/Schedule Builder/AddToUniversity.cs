@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Schedule_Builder
 {
-    public partial class AddAClass : Form
+    public partial class AddToUniversity : Form
     {
-        public AddAClass()
+        public AddToUniversity()
         {
             InitializeComponent();
+        }
+
+        public AddToUniversity(string courseAbbr, string courseValue)
+        {
+            InitializeComponent();
+
+            this.CourseAbbr.Text = courseAbbr;
+            this.CourseValue.Text = courseValue;
+            this.CrHours.Text = "";
+
         }
 
         /// <summary>
@@ -56,12 +66,22 @@ namespace Schedule_Builder
 
         /// <summary>
         /// Saves the classes information into some data structure. 
+        /// Goes back to the AddCourse Screen. 
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void AddClass_Click(object sender, EventArgs e)
         {
+            //TODO: Add the course to the university
+            ScheduleBuilderApplicationContext.getAppContext().RunForm(new AddCourse());
+            this.Close();
+        }
 
+        /// <summary>
+        /// Closes the form and returns to the AddCourse Screen. 
+        /// </summary>
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            ScheduleBuilderApplicationContext.getAppContext().RunForm(new AddCourse());
+            this.Close();
         }
     }
 }

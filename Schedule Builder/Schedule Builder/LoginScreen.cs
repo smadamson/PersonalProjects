@@ -17,19 +17,31 @@ namespace Schedule_Builder
             InitializeComponent();
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Loads the students information from the University database. Opens the students Homescreen. 
+        /// Closes this form. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Login_Click(object sender, EventArgs e)
         {
+            //Open the homeScreen
+            ScheduleBuilderApplicationContext.getAppContext().RunForm(new HomeScreen());
 
+            //TODO: load information into that page. 
+            this.Close();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Opens the NewStudent view. Closes this form. 
+        /// </summary>
+        private void newStudent_Click(object sender, EventArgs e)
         {
+            //Open the newStudent view
+            NewStudent ns = new NewStudent(id.Text, firstName.Text);
+            ScheduleBuilderApplicationContext.getAppContext().RunForm(new NewStudent());
 
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }
