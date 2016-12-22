@@ -53,5 +53,15 @@ namespace Schedule_Builder
             this.Prereq4CourseValue.Visible = true;
             this.AddAnother3.Visible = false;
         }
+
+        /// <summary>
+        /// Saves the classes information into some data structure. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddClass_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
