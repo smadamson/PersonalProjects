@@ -1,6 +1,6 @@
 ﻿namespace Schedule_Builder
 {
-    partial class FourPrereqs
+    partial class AddAClass
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,8 @@
         {
             this.Prereq3CourseValue = new System.Windows.Forms.TextBox();
             this.Prereq3CourseAbbr = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.Prereq2CourseValue = new System.Windows.Forms.TextBox();
             this.Prereq2CourseAbbr = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.Cancel = new System.Windows.Forms.Button();
-            this.AddClass = new System.Windows.Forms.Button();
             this.Prereq1CourseValue = new System.Windows.Forms.TextBox();
             this.Prereq1CourseAbbr = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,95 +50,46 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Prereq4CourseValue = new System.Windows.Forms.TextBox();
             this.Prereq4CourseAbbr = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.AddAnother1 = new System.Windows.Forms.Button();
+            this.AddAnother2 = new System.Windows.Forms.Button();
+            this.AddAnother3 = new System.Windows.Forms.Button();
+            this.CancelAcceptPanel = new System.Windows.Forms.Panel();
+            this.Cancel = new System.Windows.Forms.Button();
+            this.AddClass = new System.Windows.Forms.Button();
+            this.CancelAcceptPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Prereq3CourseValue
             // 
-            this.Prereq3CourseValue.Location = new System.Drawing.Point(114, 250);
+            this.Prereq3CourseValue.Location = new System.Drawing.Point(114, 185);
             this.Prereq3CourseValue.Name = "Prereq3CourseValue";
             this.Prereq3CourseValue.Size = new System.Drawing.Size(67, 20);
             this.Prereq3CourseValue.TabIndex = 97;
-            this.Prereq3CourseValue.Text = "1030";
+            this.Prereq3CourseValue.Visible = false;
             // 
             // Prereq3CourseAbbr
             // 
-            this.Prereq3CourseAbbr.Location = new System.Drawing.Point(21, 250);
+            this.Prereq3CourseAbbr.Location = new System.Drawing.Point(21, 185);
             this.Prereq3CourseAbbr.Name = "Prereq3CourseAbbr";
             this.Prereq3CourseAbbr.Size = new System.Drawing.Size(65, 20);
             this.Prereq3CourseAbbr.TabIndex = 96;
-            this.Prereq3CourseAbbr.Text = "CS";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(111, 224);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 13);
-            this.label11.TabIndex = 95;
-            this.label11.Text = "Course Value";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(18, 224);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(68, 13);
-            this.label12.TabIndex = 94;
-            this.label12.Text = "Course Abbr.";
+            this.Prereq3CourseAbbr.Visible = false;
             // 
             // Prereq2CourseValue
             // 
-            this.Prereq2CourseValue.Location = new System.Drawing.Point(114, 188);
+            this.Prereq2CourseValue.Location = new System.Drawing.Point(114, 159);
             this.Prereq2CourseValue.Name = "Prereq2CourseValue";
             this.Prereq2CourseValue.Size = new System.Drawing.Size(67, 20);
             this.Prereq2CourseValue.TabIndex = 93;
-            this.Prereq2CourseValue.Text = "1030";
+            this.Prereq2CourseValue.Visible = false;
             // 
             // Prereq2CourseAbbr
             // 
-            this.Prereq2CourseAbbr.Location = new System.Drawing.Point(21, 188);
+            this.Prereq2CourseAbbr.Location = new System.Drawing.Point(21, 159);
             this.Prereq2CourseAbbr.Name = "Prereq2CourseAbbr";
             this.Prereq2CourseAbbr.Size = new System.Drawing.Size(65, 20);
             this.Prereq2CourseAbbr.TabIndex = 92;
-            this.Prereq2CourseAbbr.Text = "CS";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(111, 162);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 13);
-            this.label9.TabIndex = 91;
-            this.label9.Text = "Course Value";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(18, 162);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 13);
-            this.label10.TabIndex = 90;
-            this.label10.Text = "Course Abbr.";
-            // 
-            // Cancel
-            // 
-            this.Cancel.Location = new System.Drawing.Point(21, 357);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(129, 23);
-            this.Cancel.TabIndex = 89;
-            this.Cancel.Text = "Cancel and Go Back";
-            this.Cancel.UseVisualStyleBackColor = true;
-            // 
-            // AddClass
-            // 
-            this.AddClass.Location = new System.Drawing.Point(312, 357);
-            this.AddClass.Name = "AddClass";
-            this.AddClass.Size = new System.Drawing.Size(75, 23);
-            this.AddClass.TabIndex = 88;
-            this.AddClass.Text = "Add Class";
-            this.AddClass.UseVisualStyleBackColor = true;
+            this.Prereq2CourseAbbr.Visible = false;
             // 
             // Prereq1CourseValue
             // 
@@ -152,7 +97,6 @@
             this.Prereq1CourseValue.Name = "Prereq1CourseValue";
             this.Prereq1CourseValue.Size = new System.Drawing.Size(67, 20);
             this.Prereq1CourseValue.TabIndex = 87;
-            this.Prereq1CourseValue.Text = "1030";
             // 
             // Prereq1CourseAbbr
             // 
@@ -160,7 +104,6 @@
             this.Prereq1CourseAbbr.Name = "Prereq1CourseAbbr";
             this.Prereq1CourseAbbr.Size = new System.Drawing.Size(65, 20);
             this.Prereq1CourseAbbr.TabIndex = 86;
-            this.Prereq1CourseAbbr.Text = "CS";
             // 
             // label7
             // 
@@ -290,57 +233,96 @@
             // 
             // Prereq4CourseValue
             // 
-            this.Prereq4CourseValue.Location = new System.Drawing.Point(114, 311);
+            this.Prereq4CourseValue.Location = new System.Drawing.Point(114, 211);
             this.Prereq4CourseValue.Name = "Prereq4CourseValue";
             this.Prereq4CourseValue.Size = new System.Drawing.Size(67, 20);
             this.Prereq4CourseValue.TabIndex = 102;
-            this.Prereq4CourseValue.Text = "1030";
+            this.Prereq4CourseValue.Visible = false;
             // 
             // Prereq4CourseAbbr
             // 
-            this.Prereq4CourseAbbr.Location = new System.Drawing.Point(21, 311);
+            this.Prereq4CourseAbbr.Location = new System.Drawing.Point(21, 211);
             this.Prereq4CourseAbbr.Name = "Prereq4CourseAbbr";
             this.Prereq4CourseAbbr.Size = new System.Drawing.Size(65, 20);
             this.Prereq4CourseAbbr.TabIndex = 101;
-            this.Prereq4CourseAbbr.Text = "CS";
+            this.Prereq4CourseAbbr.Visible = false;
             // 
-            // label13
+            // AddAnother1
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(111, 285);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 13);
-            this.label13.TabIndex = 100;
-            this.label13.Text = "Course Value";
+            this.AddAnother1.Location = new System.Drawing.Point(210, 133);
+            this.AddAnother1.Name = "AddAnother1";
+            this.AddAnother1.Size = new System.Drawing.Size(75, 23);
+            this.AddAnother1.TabIndex = 103;
+            this.AddAnother1.Text = "Add Another";
+            this.AddAnother1.UseVisualStyleBackColor = true;
+            this.AddAnother1.Click += new System.EventHandler(this.AddAnother1_Click);
             // 
-            // label14
+            // AddAnother2
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(18, 285);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(68, 13);
-            this.label14.TabIndex = 99;
-            this.label14.Text = "Course Abbr.";
+            this.AddAnother2.Location = new System.Drawing.Point(210, 159);
+            this.AddAnother2.Name = "AddAnother2";
+            this.AddAnother2.Size = new System.Drawing.Size(75, 23);
+            this.AddAnother2.TabIndex = 104;
+            this.AddAnother2.Text = "Add Another";
+            this.AddAnother2.UseVisualStyleBackColor = true;
+            this.AddAnother2.Visible = false;
+            this.AddAnother2.Click += new System.EventHandler(this.AddAnother2_Click);
+            // 
+            // AddAnother3
+            // 
+            this.AddAnother3.Location = new System.Drawing.Point(210, 185);
+            this.AddAnother3.Name = "AddAnother3";
+            this.AddAnother3.Size = new System.Drawing.Size(75, 23);
+            this.AddAnother3.TabIndex = 105;
+            this.AddAnother3.Text = "Add Another";
+            this.AddAnother3.UseVisualStyleBackColor = true;
+            this.AddAnother3.Visible = false;
+            this.AddAnother3.Click += new System.EventHandler(this.AddAnother3_Click);
+            // 
+            // CancelAcceptPanel
+            // 
+            this.CancelAcceptPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CancelAcceptPanel.Controls.Add(this.Cancel);
+            this.CancelAcceptPanel.Controls.Add(this.AddClass);
+            this.CancelAcceptPanel.Location = new System.Drawing.Point(0, 155);
+            this.CancelAcceptPanel.Name = "CancelAcceptPanel";
+            this.CancelAcceptPanel.Size = new System.Drawing.Size(404, 49);
+            this.CancelAcceptPanel.TabIndex = 107;
+            // 
+            // Cancel
+            // 
+            this.Cancel.Location = new System.Drawing.Point(19, 13);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(129, 23);
+            this.Cancel.TabIndex = 91;
+            this.Cancel.Text = "Cancel and Go Back";
+            this.Cancel.UseVisualStyleBackColor = true;
+            // 
+            // AddClass
+            // 
+            this.AddClass.Location = new System.Drawing.Point(310, 13);
+            this.AddClass.Name = "AddClass";
+            this.AddClass.Size = new System.Drawing.Size(75, 23);
+            this.AddClass.TabIndex = 90;
+            this.AddClass.Text = "Add Class";
+            this.AddClass.UseVisualStyleBackColor = true;
             // 
             // FourPrereqs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 392);
+            this.ClientSize = new System.Drawing.Size(399, 201);
+            this.Controls.Add(this.CancelAcceptPanel);
+            this.Controls.Add(this.AddAnother3);
+            this.Controls.Add(this.AddAnother2);
+            this.Controls.Add(this.AddAnother1);
             this.Controls.Add(this.Prereq4CourseValue);
             this.Controls.Add(this.Prereq4CourseAbbr);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.Prereq3CourseValue);
             this.Controls.Add(this.Prereq3CourseAbbr);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.Prereq2CourseValue);
             this.Controls.Add(this.Prereq2CourseAbbr);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.Cancel);
-            this.Controls.Add(this.AddClass);
             this.Controls.Add(this.Prereq1CourseValue);
             this.Controls.Add(this.Prereq1CourseAbbr);
             this.Controls.Add(this.label7);
@@ -359,6 +341,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FourPrereqs";
             this.Text = "Add A Course";
+            this.CancelAcceptPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,14 +351,8 @@
 
         private System.Windows.Forms.TextBox Prereq3CourseValue;
         private System.Windows.Forms.TextBox Prereq3CourseAbbr;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox Prereq2CourseValue;
         private System.Windows.Forms.TextBox Prereq2CourseAbbr;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button Cancel;
-        private System.Windows.Forms.Button AddClass;
         private System.Windows.Forms.TextBox Prereq1CourseValue;
         private System.Windows.Forms.TextBox Prereq1CourseAbbr;
         private System.Windows.Forms.Label label7;
@@ -394,7 +371,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Prereq4CourseValue;
         private System.Windows.Forms.TextBox Prereq4CourseAbbr;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button AddAnother1;
+        private System.Windows.Forms.Button AddAnother2;
+        private System.Windows.Forms.Button AddAnother3;
+        private System.Windows.Forms.Panel CancelAcceptPanel;
+        private System.Windows.Forms.Button Cancel;
+        private System.Windows.Forms.Button AddClass;
     }
 }

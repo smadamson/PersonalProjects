@@ -68,7 +68,7 @@ namespace Schedule_Builder
 
             // Start an application context and run one form inside it
             ScheduleBuilderApplicationContext appContext = ScheduleBuilderApplicationContext.getAppContext();
-            appContext.RunForm(new OnePrereq());
+            appContext.RunForm(new AddAClass());
             Application.Run(appContext);
         }
     }

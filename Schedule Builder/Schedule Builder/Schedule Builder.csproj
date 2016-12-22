@@ -46,37 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FourPrereqs.cs">
+    <Compile Include="AddAClass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FourPrereqs.Designer.cs">
-      <DependentUpon>FourPrereqs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OnePrereq.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OnePrereq.Designer.cs">
-      <DependentUpon>OnePrereq.cs</DependentUpon>
+    <Compile Include="AddAClass.Designer.cs">
+      <DependentUpon>AddAClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThreePrereqs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThreePrereqs.Designer.cs">
-      <DependentUpon>ThreePrereqs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TwoPrereqs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TwoPrereqs.Designer.cs">
-      <DependentUpon>TwoPrereqs.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="FourPrereqs.resx">
-      <DependentUpon>FourPrereqs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OnePrereq.resx">
-      <DependentUpon>OnePrereq.cs</DependentUpon>
+    <EmbeddedResource Include="AddAClass.resx">
+      <DependentUpon>AddAClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,12 +66,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ThreePrereqs.resx">
-      <DependentUpon>ThreePrereqs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TwoPrereqs.resx">
-      <DependentUpon>TwoPrereqs.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
