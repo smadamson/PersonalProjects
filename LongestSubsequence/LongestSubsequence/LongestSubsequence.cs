@@ -62,11 +62,6 @@ class Solution
         int startingValue = grid[y][x];
         //add the value to the list of used values. 
         valuesUsed.Add(startingValue);
-        //this value has been used, so set it to be -1. 
-        //grid[y][x] = -1;
-        
-        //int originalX = x;
-        //int originalY = y;
 
         //Look at this element and then look at each element adjacent to it. 
         //See which elements have a difference of 3. 
@@ -153,8 +148,7 @@ class Solution
         // Each of the subsequences lengths will be stored in this list. Everytime the base case is reached, 
         // add the length to the list.
         lengths.Add(length);
-        //Reset the value in the array. 
-        //grid[y][x] = startingValue;
+
         //remove the value from the list of used values. 
         valuesUsed.Remove(startingValue);
         return lengths;
@@ -172,8 +166,7 @@ class Solution
     /// is greater than or equal to 3 </returns>
     private static bool CheckElement(int x, int y, int[][] grid, int startingValue, List<int> valuesUsed)
     {
-        
-        return IsInBounds(x, y, grid) && grid[y][x] != -1 && Math.Abs(startingValue - grid[y][x]) >= 3 && !valuesUsed.Contains(grid[y][x]);
+        return IsInBounds(x, y, grid) && Math.Abs(startingValue - grid[y][x]) > 3 && !valuesUsed.Contains(grid[y][x]);
     }
 
     /// <summary>
@@ -186,7 +179,7 @@ class Solution
 
     static void Main(String[] args)
     {
-        int res, res1, res2, res3, res4;
+        int res, res1, res2, res3, res4, res5, res6, res7;
         /*
         int numRows = 0;
         int numCols = 0;
@@ -248,7 +241,7 @@ class Solution
 
         // 5 6
         // 8 7
-        //Answer is 2
+        //Answer is 1
         int[][] grid3 = new int[2][];
 
         int[] grid3Row0 = new int[] { 5, 6 };
@@ -257,15 +250,64 @@ class Solution
         grid3[0] = grid3Row0;
         grid3[1] = grid3Row1;
 
-        //res = LongestSubsequence(grid);
+        // 8 2 4
+        // 0 6 1 
+        // 3 7 9
+        // Answer is 8
+        int[][] grid5 = new int[3][];
+
+        int[] grid5Row0 = new int[] { 8, 2, 4 };
+        int[] grid5Row1 = new int[] { 0, 6, 1 };
+        int[] grid5Row2 = new int[] { 3, 7, 9 };
+
+        grid5[0] = grid5Row0;
+        grid5[1] = grid5Row1;
+        grid5[2] = grid5Row2;
+
+        // 4 2 4 
+        // 0 3 1
+        // Answer is 2
+        int[][] grid6 = new int[2][];
+
+        int[] grid6Row0 = new int[] { 4, 2, 4 };
+        int[] grid6Row1 = new int[] { 0, 3, 1 };
+        //int[] grid6Row2 = new int[] { 3, 7, 9 };
+
+        grid6[0] = grid6Row0;
+        grid6[1] = grid6Row1;
+        //grid6[2] = grid6Row2;
+
+        // -1 -9 2
+        // -4 4 12
+        // 16 0 9
+        // Answer is 9
+        int[][] grid7 = new int[3][];
+
+        int[] grid7Row0 = new int[] { -1, -9, 2 };
+        int[] grid7Row1 = new int[] { -4, 4, 12 };
+        int[] grid7Row2 = new int[] { 16, 0, 9 };
+
+        grid7[0] = grid7Row0;
+        grid7[1] = grid7Row1;
+        grid7[2] = grid7Row2;
+
+
+       // res = LongestSubsequence(grid);
         res4 = LongestSubsequence(grid4); 
         res3 = LongestSubsequence(grid3);
         res2 = LongestSubsequence(grid2);
         res1 = LongestSubsequence(grid1);
+        res5 = LongestSubsequence(grid5);
+        res6 = LongestSubsequence(grid6);
+        res7 = LongestSubsequence(grid7);
+
         Console.WriteLine(res1 + " Answer: 9");
         Console.WriteLine(res2 + " Answer: 4");
-        Console.WriteLine(res3 + " Answer: 2");
+        Console.WriteLine(res3 + " Answer: 1");
         Console.WriteLine(res4 + " Answer: 6");
+        Console.WriteLine(res5 + " Answer: 8");
+        Console.WriteLine(res6 + " Answer: 2");
+        Console.WriteLine(res7 + " Answer: 9");
         //Console.WriteLine(res);
         Console.Read();
     }
