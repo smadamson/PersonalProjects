@@ -63,7 +63,7 @@ class Solution
         //add the value to the list of used values. 
         valuesUsed.Add(startingValue);
         //this value has been used, so set it to be -1. 
-        grid[y][x] = -1;
+        //grid[y][x] = -1;
         
         //int originalX = x;
         //int originalY = y;
@@ -154,7 +154,7 @@ class Solution
         // add the length to the list.
         lengths.Add(length);
         //Reset the value in the array. 
-        grid[y][x] = startingValue;
+        //grid[y][x] = startingValue;
         //remove the value from the list of used values. 
         valuesUsed.Remove(startingValue);
         return lengths;
@@ -186,7 +186,7 @@ class Solution
 
     static void Main(String[] args)
     {
-        int res;
+        int res, res1, res2, res3, res4;
         /*
         int numRows = 0;
         int numCols = 0;
@@ -258,9 +258,15 @@ class Solution
         grid3[1] = grid3Row1;
 
         //res = LongestSubsequence(grid);
-        res = LongestSubsequence(grid4); 
-        //res = LongestSubsequence(grid3);
-        Console.WriteLine(res);
+        res4 = LongestSubsequence(grid4); 
+        res3 = LongestSubsequence(grid3);
+        res2 = LongestSubsequence(grid2);
+        res1 = LongestSubsequence(grid1);
+        Console.WriteLine(res1 + " Answer: 9");
+        Console.WriteLine(res2 + " Answer: 4");
+        Console.WriteLine(res3 + " Answer: 2");
+        Console.WriteLine(res4 + " Answer: 6");
+        //Console.WriteLine(res);
         Console.Read();
     }
 }
