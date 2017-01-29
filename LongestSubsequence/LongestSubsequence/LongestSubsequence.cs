@@ -46,26 +46,25 @@ class Solution
     /// </summary>
     private static int SubsequenceLength(int[][] grid, int x, int y)
     {
-        List<int> valuesUsed = new List<int>();
-        List<int> lengths = SubsequenceLengthRecursive(grid, x, y, new List<int>(), 1, ref valuesUsed);
+        List<int> lengths = SubsequenceLengthRecursive(grid, x, y, new List<int>(), 1, new List<int>());
         
         // return the largest value in lengths. 
-        int greatestSoFar = 0;
-        foreach (int value in lengths)
+        int longestSoFar = 0;
+        foreach (int length in lengths)
         {
-            if (value > greatestSoFar)
+            if (length > longestSoFar)
             {
-                greatestSoFar = value;
+                longestSoFar = length;
             }
         }
-        return greatestSoFar;
+        return longestSoFar;
     }
 
     /// <summary>
     ///  Recursively returns a list of lengths of the longest Subsequences starting at the given x-,y-coordinate.  
     /// </summary>
     /// <returns> a list of all the longest subsequence lengths starting at (x,y) </returns>
-    private static List<int> SubsequenceLengthRecursive(int[][] grid, int x, int y, List<int> lengths, int length, ref List<int> valuesUsed)
+    private static List<int> SubsequenceLengthRecursive(int[][] grid, int x, int y, List<int> lengths, int length,  List<int> valuesUsed)
     {
         // x and y are the starting element, check each element around that element. 
         int startingValue = grid[y][x];
@@ -79,7 +78,7 @@ class Solution
         {
             // this element is now valid, increse the length by one.
             length += 1;
-            lengths = SubsequenceLengthRecursive(grid, x + 1, y, lengths, length, ref valuesUsed);
+            lengths = SubsequenceLengthRecursive(grid, x + 1, y, lengths, length,  valuesUsed);
 
             // this element is finnished being used so decrease the length by one. 
             length = length - 1;
@@ -88,49 +87,49 @@ class Solution
         if (CheckElement(x - 1, y, grid, startingValue, valuesUsed))
         {
             length += 1;
-            lengths = SubsequenceLengthRecursive(grid, x - 1, y, lengths, length, ref valuesUsed);
+            lengths = SubsequenceLengthRecursive(grid, x - 1, y, lengths, length,  valuesUsed);
             length = length - 1;
         }
         // element above
         if (CheckElement(x, y - 1, grid, startingValue, valuesUsed))
         {
             length += 1;
-            lengths = SubsequenceLengthRecursive(grid, x, y - 1, lengths, length, ref valuesUsed);
+            lengths = SubsequenceLengthRecursive(grid, x, y - 1, lengths, length,  valuesUsed);
             length = length - 1;
         }
         // element below
         if (CheckElement(x, y + 1, grid, startingValue, valuesUsed))
         {
             length += 1;
-            lengths = SubsequenceLengthRecursive(grid, x, y + 1, lengths, length, ref valuesUsed);
+            lengths = SubsequenceLengthRecursive(grid, x, y + 1, lengths, length,  valuesUsed);
             length = length - 1;
         }
         // lower right corner
         if (CheckElement(x + 1, y + 1, grid, startingValue, valuesUsed))
         {
             length += 1;
-            lengths = SubsequenceLengthRecursive(grid, x + 1, y + 1, lengths, length, ref valuesUsed);
+            lengths = SubsequenceLengthRecursive(grid, x + 1, y + 1, lengths, length, valuesUsed);
             length = length - 1;
         }
         // lower left corner
         if (CheckElement(x - 1, y + 1, grid, startingValue, valuesUsed))
         {
             length += 1;
-            lengths = SubsequenceLengthRecursive(grid, x - 1, y + 1, lengths, length, ref valuesUsed);
+            lengths = SubsequenceLengthRecursive(grid, x - 1, y + 1, lengths, length,  valuesUsed);
             length = length - 1;
         }
         // upper right corner
         if (CheckElement(x + 1, y - 1, grid, startingValue, valuesUsed))
         {
             length += 1;
-            lengths = SubsequenceLengthRecursive(grid, x + 1, y - 1, lengths, length, ref valuesUsed);
+            lengths = SubsequenceLengthRecursive(grid, x + 1, y - 1, lengths, length,  valuesUsed);
             length = length - 1;
         }
         // upper left corner
         if (CheckElement(x - 1, y - 1, grid, startingValue, valuesUsed))
         {
             length += 1;
-            lengths = SubsequenceLengthRecursive(grid, x - 1, y - 1, lengths, length, ref valuesUsed);
+            lengths = SubsequenceLengthRecursive(grid, x - 1, y - 1, lengths, length,  valuesUsed);
             length = length - 1;
         }
         // After all the surrounding values have been changed, store the length in lengths if it is larger than the last value in lengths 
@@ -163,6 +162,7 @@ class Solution
     {
         return x >= 0 && y >= 0 && y < grid.Length && x < grid[0].Length;
     }
+
 
     static void Main(String[] args)
     {
