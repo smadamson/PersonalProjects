@@ -37,6 +37,7 @@ namespace TA_Comment_Generator
         /// </summary>
         private void InitializeComponent()
         {
+            string textVal = "this value is set in Assignment.cs";
 
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -110,7 +111,7 @@ namespace TA_Comment_Generator
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(148, 17);
             this.checkBox1.TabIndex = 13;
-            this.checkBox1.Text = "Code not well commented";
+            this.checkBox1.Text = textVal;
             this.checkBox1.UseVisualStyleBackColor = true;
             checkboxes.Add(this.checkBox1);
             // 
@@ -121,9 +122,9 @@ namespace TA_Comment_Generator
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(160, 17);
             this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "could optimize pushing apart";
+            this.checkBox2.Text = textVal;
             this.checkBox2.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox2);
             // 
             // checkBox3
             // 
@@ -132,9 +133,9 @@ namespace TA_Comment_Generator
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(195, 17);
             this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "jiggling should be in seperate thread";
+            this.checkBox3.Text = textVal;
             this.checkBox3.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox3);
             // 
             // checkBox4
             // 
@@ -143,9 +144,9 @@ namespace TA_Comment_Generator
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(144, 17);
             this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "jiggling, long wall of code";
+            this.checkBox4.Text = textVal;
             this.checkBox4.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox4);
             // 
             // checkBox5
             // 
@@ -154,9 +155,9 @@ namespace TA_Comment_Generator
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(198, 17);
             this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "cannot toggle of spread-out or jiggler";
+            this.checkBox5.Text = textVal;
             this.checkBox5.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox5);
             // 
             // checkBox6
             // 
@@ -165,9 +166,9 @@ namespace TA_Comment_Generator
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(127, 17);
             this.checkBox6.TabIndex = 5;
-            this.checkBox6.Text = "circles not fully drawn";
+            this.checkBox6.Text = textVal;
             this.checkBox6.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox6);
             // 
             // checkBox7
             // 
@@ -176,9 +177,9 @@ namespace TA_Comment_Generator
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(157, 17);
             this.checkBox7.TabIndex = 6;
-            this.checkBox7.Text = "set color in paintComponent";
+            this.checkBox7.Text = textVal;
             this.checkBox7.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox7);
             // 
             // checkBox8
             // 
@@ -187,9 +188,9 @@ namespace TA_Comment_Generator
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(148, 17);
             this.checkBox8.TabIndex = 7;
-            this.checkBox8.Text = "mouse dragged not global";
+            this.checkBox8.Text = textVal;
             this.checkBox8.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox8);
             // 
             // checkBox9
             // 
@@ -198,9 +199,9 @@ namespace TA_Comment_Generator
             this.checkBox9.Name = "checkBox9";
             this.checkBox9.Size = new System.Drawing.Size(114, 17);
             this.checkBox9.TabIndex = 8;
-            this.checkBox9.Text = "calling run vs. start";
+            this.checkBox9.Text = textVal;
             this.checkBox9.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox9);
             // 
             // checkBox10
             // 
@@ -209,9 +210,9 @@ namespace TA_Comment_Generator
             this.checkBox10.Name = "checkBox10";
             this.checkBox10.Size = new System.Drawing.Size(145, 17);
             this.checkBox10.TabIndex = 14;
-            this.checkBox10.Text = "Good Analysis with labels";
+            this.checkBox10.Text = textVal;
             this.checkBox10.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox10);
             // 
             // checkBox11
             // 
@@ -220,9 +221,9 @@ namespace TA_Comment_Generator
             this.checkBox11.Name = "checkBox11";
             this.checkBox11.Size = new System.Drawing.Size(124, 17);
             this.checkBox11.TabIndex = 15;
-            this.checkBox11.Text = "spread out is random";
+            this.checkBox11.Text = textVal;
             this.checkBox11.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox11);
             // 
             // checkBox12
             // 
@@ -231,9 +232,9 @@ namespace TA_Comment_Generator
             this.checkBox12.Name = "checkBox12";
             this.checkBox12.Size = new System.Drawing.Size(129, 17);
             this.checkBox12.TabIndex = 16;
-            this.checkBox12.Text = "Improper Constructors";
+            this.checkBox12.Text = textVal;
             this.checkBox12.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox12);
             // 
             // checkBox13
             // 
@@ -242,9 +243,9 @@ namespace TA_Comment_Generator
             this.checkBox13.Name = "checkBox13";
             this.checkBox13.Size = new System.Drawing.Size(140, 17);
             this.checkBox13.TabIndex = 17;
-            this.checkBox13.Text = "Code is well commented";
+            this.checkBox13.Text = textVal;
             this.checkBox13.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox13);
             // 
             // checkBox14
             // 
@@ -253,9 +254,9 @@ namespace TA_Comment_Generator
             this.checkBox14.Name = "checkBox14";
             this.checkBox14.Size = new System.Drawing.Size(129, 17);
             this.checkBox14.TabIndex = 18;
-            this.checkBox14.Text = "Good start, start early.";
+            this.checkBox14.Text = textVal;
             this.checkBox14.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox14);
             // 
             // checkBox15
             // 
@@ -264,9 +265,9 @@ namespace TA_Comment_Generator
             this.checkBox15.Name = "checkBox15";
             this.checkBox15.Size = new System.Drawing.Size(230, 17);
             this.checkBox15.TabIndex = 19;
-            this.checkBox15.Text = "Analysis has no big-O but has good graphs.";
+            this.checkBox15.Text = textVal;
             this.checkBox15.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox15);
             // 
             // checkBox16
             // 
@@ -275,9 +276,9 @@ namespace TA_Comment_Generator
             this.checkBox16.Name = "checkBox16";
             this.checkBox16.Size = new System.Drawing.Size(176, 17);
             this.checkBox16.TabIndex = 20;
-            this.checkBox16.Text = "Use of public instance variables";
+            this.checkBox16.Text = textVal;
             this.checkBox16.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox16);
             // 
             // checkBox17
             // 
@@ -286,9 +287,9 @@ namespace TA_Comment_Generator
             this.checkBox17.Name = "checkBox17";
             this.checkBox17.Size = new System.Drawing.Size(165, 17);
             this.checkBox17.TabIndex = 21;
-            this.checkBox17.Text = "Analysis needs improvement. ";
+            this.checkBox17.Text = textVal;
             this.checkBox17.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox17);
             // 
             // checkBox18
             // 
@@ -297,9 +298,9 @@ namespace TA_Comment_Generator
             this.checkBox18.Name = "checkBox18";
             this.checkBox18.Size = new System.Drawing.Size(161, 17);
             this.checkBox18.TabIndex = 22;
-            this.checkBox18.Text = "Selected circle moves away.";
+            this.checkBox18.Text = textVal;
             this.checkBox18.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox18);
             // 
             // checkBox19
             // 
@@ -308,9 +309,9 @@ namespace TA_Comment_Generator
             this.checkBox19.Name = "checkBox19";
             this.checkBox19.Size = new System.Drawing.Size(174, 17);
             this.checkBox19.TabIndex = 23;
-            this.checkBox19.Text = "Jiggler functions in circle class. ";
+            this.checkBox19.Text = textVal;
             this.checkBox19.UseVisualStyleBackColor = true;
-            checkboxes.Add(this.checkBox1);
+            checkboxes.Add(this.checkBox19);
 
             // 
             // Form1
