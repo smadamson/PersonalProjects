@@ -20,13 +20,13 @@ namespace TA_Comment_Generator
         String[] textFields;
 
         //Overall code style
-        string oneText, one,  twoText, two, threeText,  three,  fourText,  four, fiveText,  five, sixText, six, sevenText, seven, eightText, eight, nineText, nine,tenText,ten, elevenText, eleven;
-       
+        string oneText, one, twoText, two, threeText, three, fourText, four, fiveText, five, sixText, six, sevenText, seven, eightText, eight, nineText, nine, tenText, ten, elevenText, eleven;
+
         //Analysis doc
         string twelveText, twelve, thirteenText, thirteen, fourteenText, fourteen;
-        
+
         //Other docs
-        string fifteenText, fifteen, sixteenText, sixteen, seventeenText, seventeen, eighteenText, eighteen, nineteenText, ninteen;                                              
+        string fifteenText, fifteen, sixteenText, sixteen, seventeenText, seventeen, eighteenText, eighteen, nineteenText, ninteen;
 
         /****************    Assignment particular categories   *************************/
         //Assignment 2 NBody problem
@@ -47,9 +47,10 @@ namespace TA_Comment_Generator
         }
 
         /**
+         * Sets up all of the comments to be generated and text for the checkBoxes. 
+         * 
          * At some point, this should read lines from a text file... The first line will be the text shown next to the box. 
-         * The second line will be the comment generated... 
-         * Ugh, I like doing things the hard way.  
+         * The second line will be the comment generated when that box is checked.
          */
         private void Setup()
         {
@@ -176,113 +177,41 @@ namespace TA_Comment_Generator
             comments.Add(ninteen);
         }
 
+        /**
+         * Generates the comment and displays it in the comment text box to the user. 
+         */
         private void generate_comment_Click(object sender, EventArgs e)
         {
             //Create the comment to be generated. 
 
             string comment = "";
             int i = 0;
-            foreach(string com in comments)
+            foreach (string com in comments)
             {
                 //Add all of the checked boxes comments to the generated comment. 
-                if (checkboxes[i].Checked == true)
+                if (checkboxes[i].Checked == true && (i != 6 || i != 7)) //Due to the nature of comments 7 and 8 (indexes 6 and 7), if they are checked I want them to be included at the end. 
                 {
-                    comment += comments + "\n";
+                    comment += com + "\n";
                 }
                 i++;
             }
 
             //Add what is in the comment text box to the generated comment
             comment += this.commentTxtBox.Text + "\n";
+
+            //Due to the nature of comments 7 and 8, if they are checked I want them to be included at the end. 
+            if (checkBox7.Checked == true)
+                comment += seven + "\n";
+            if (checkBox8.Checked == true)
+                comment += eight + "\n";
+
             comment += "Please come see me in office hours if you have any questions about grading.";
             this.commentTxtBox.Text = comment;
-
-            /*
-            if (this.checkBox1.Checked == true)
-            {
-                comment += one;
-            }
-            if (this.checkBox2.Checked == true)
-            {
-                comment += two;
-
-            }
-            if (this.checkBox3.Checked == true)
-            {
-                comment += three;
-
-            }
-            if (this.checkBox4.Checked == true)
-            {
-                comment += four;
-            }
-            if (this.checkBox5.Checked == true)
-            {
-                comment += five;
-            }
-            if (this.checkBox6.Checked == true)
-            {
-                comment += six;
-
-            }
-            if (this.checkBox7.Checked == true)
-            {
-                comment += seven;
-            }
-            if (this.checkBox8.Checked == true)
-            {
-                comment += eight;
-            }
-            if (this.checkBox9.Checked == true)
-            {
-                comment += nine;
-            }
-            if (this.checkBox10.Checked == true)
-            {
-                comment += ten;
-            }
-            if (this.checkBox11.Checked == true)
-            {
-                comment += eleven;
-            }
-            if (this.checkBox12.Checked == true)
-            {
-                comment += twelve;
-            }
-            if (this.checkBox13.Checked == true)
-            {
-                comment += thirteen;
-            }
-            if (this.checkBox15.Checked == true)
-            {
-                comment += fifteen;
-            }
-            if (this.checkBox16.Checked == true)
-            {
-                comment += sixteen;
-            }
-            if (this.checkBox17.Checked == true)
-            {
-                comment += seventeen;
-            }
-            if (this.checkBox18.Checked == true)
-            {
-                comment += eighteen;
-            }
-            if (this.checkBox19.Checked == true)
-            {
-                comment += ninteen;
-            }
-            
-            if (this.checkBox14.Checked == true)
-            {
-                comment += fourteen;
-            }
-            */
-
-
         }
 
+        /**
+         * Clear all of the check boxes and the comment text box. 
+         */
         private void clear_Click(object sender, EventArgs e)
         {
             this.commentTxtBox.Text = "";
@@ -290,27 +219,6 @@ namespace TA_Comment_Generator
             {
                 cbox.Checked = false;
             }
-            /*
-            this.checkBox2.Checked = false;
-            this.checkBox3.Checked = false;
-            this.checkBox4.Checked = false;
-            this.checkBox5.Checked = false;
-            this.checkBox6.Checked = false;
-            this.checkBox7.Checked = false;
-            this.checkBox8.Checked = false;
-            this.checkBox9.Checked = false;
-            this.checkBox1.Checked = false;
-            this.checkBox10.Checked = false;
-            this.checkBox11.Checked = false;
-            this.checkBox12.Checked = false;
-            this.checkBox13.Checked = false;
-            this.checkBox14.Checked = false;
-            this.checkBox15.Checked = false;
-            this.checkBox16.Checked = false;
-            this.checkBox17.Checked = false;
-            this.checkBox18.Checked = false;
-            this.checkBox19.Checked = false;
-            */
         }
     }
 }
