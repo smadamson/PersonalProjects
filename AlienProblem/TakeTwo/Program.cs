@@ -32,10 +32,6 @@ namespace TakeTwo
         /// <summary>
         /// Recursively returns the probability for the given number of aliens given the current probability.  
         /// </summary>
-        /// <param name="aliens"></param>
-        /// <param name="currProb"></param>
-        /// <param name="prob"></param>
-        /// <returns></returns>
         public static double Aliens(int aliens, double currProb)
         {
             Random rnd = new Random();
