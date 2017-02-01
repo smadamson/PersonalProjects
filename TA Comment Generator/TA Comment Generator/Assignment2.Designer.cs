@@ -37,56 +37,107 @@ namespace TA_Comment_Generator
         /// </summary>
         private void InitializeComponent()
         {
-
             this.generate_comment = new System.Windows.Forms.Button();
             this.commentTxtBox = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.clear = new System.Windows.Forms.Button();
-
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox1);
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox2);
             this.checkBox3 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox3);
             this.checkBox4 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox4);
             this.checkBox5 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox5);
             this.checkBox6 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox6);
             this.checkBox7 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox7);
             this.checkBox8 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox8);
             this.checkBox9 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox9);
             this.checkBox10 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox10);
             this.checkBox11 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox11);
             this.checkBox12 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox12);
             this.checkBox13 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox13);
             this.checkBox14 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox14);
             this.checkBox15 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox15);
             this.checkBox16 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox16);
             this.checkBox17 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox17);
             this.checkBox18 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox18);
             this.checkBox19 = new System.Windows.Forms.CheckBox();
-            checkboxes.Add(checkBox19);
-
             this.CheckBoxPanel = new System.Windows.Forms.Panel();
             this.CommentBoxPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox20 = new System.Windows.Forms.CheckBox();
+            this.checkBox21 = new System.Windows.Forms.CheckBox();
+            this.checkBox22 = new System.Windows.Forms.CheckBox();
+            this.checkBox23 = new System.Windows.Forms.CheckBox();
+            this.checkBox24 = new System.Windows.Forms.CheckBox();
+            this.checkBox25 = new System.Windows.Forms.CheckBox();
+            this.checkBox26 = new System.Windows.Forms.CheckBox();
+            this.checkBox27 = new System.Windows.Forms.CheckBox();
+            this.checkBox28 = new System.Windows.Forms.CheckBox();
+            this.checkBox29 = new System.Windows.Forms.CheckBox();
+            this.checkBox30 = new System.Windows.Forms.CheckBox();
+            this.checkBox31 = new System.Windows.Forms.CheckBox();
+            this.checkBox32 = new System.Windows.Forms.CheckBox();
+            this.checkBox33 = new System.Windows.Forms.CheckBox();
+            this.checkBox34 = new System.Windows.Forms.CheckBox();
+            this.checkBox35 = new System.Windows.Forms.CheckBox();
+            this.checkBox36 = new System.Windows.Forms.CheckBox();
+            this.checkBox37 = new System.Windows.Forms.CheckBox();
+            this.checkBox38 = new System.Windows.Forms.CheckBox();
             this.CheckBoxPanel.SuspendLayout();
             this.CommentBoxPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // generate_comment
+            // 
+            this.generate_comment.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.generate_comment.Location = new System.Drawing.Point(386, 454);
+            this.generate_comment.Name = "generate_comment";
+            this.generate_comment.Size = new System.Drawing.Size(127, 23);
+            this.generate_comment.TabIndex = 9;
+            this.generate_comment.Text = "generate comment";
+            this.generate_comment.UseVisualStyleBackColor = true;
+            this.generate_comment.Click += new System.EventHandler(this.generate_comment_Click);
+            // 
+            // commentTxtBox
+            // 
+            this.commentTxtBox.AccessibleName = "comment";
+            this.commentTxtBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.commentTxtBox.Location = new System.Drawing.Point(0, 20);
+            this.commentTxtBox.Name = "commentTxtBox";
+            this.commentTxtBox.Size = new System.Drawing.Size(264, 472);
+            this.commentTxtBox.TabIndex = 10;
+            this.commentTxtBox.Text = "";
+            this.commentTxtBox.TextChanged += new System.EventHandler(this.commentTxtBox_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(131, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Add other comments here:";
+            // 
+            // clear
+            // 
+            this.clear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.clear.Location = new System.Drawing.Point(529, 454);
+            this.clear.Name = "clear";
+            this.clear.Size = new System.Drawing.Size(75, 23);
+            this.clear.TabIndex = 12;
+            this.clear.Text = "clear";
+            this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this.clear_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(3, 3);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(180, 17);
+            this.checkBox1.TabIndex = 13;
+            this.checkBox1.Text = "this value is set in Assignment.cs";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
@@ -167,57 +218,6 @@ namespace TA_Comment_Generator
             this.checkBox9.TabIndex = 8;
             this.checkBox9.Text = "this value is set in Assignment.cs";
             this.checkBox9.UseVisualStyleBackColor = true;
-            // 
-            // generate_comment
-            // 
-            this.generate_comment.Location = new System.Drawing.Point(26, 488);
-            this.generate_comment.Name = "generate_comment";
-            this.generate_comment.Size = new System.Drawing.Size(127, 23);
-            this.generate_comment.TabIndex = 9;
-            this.generate_comment.Text = "generate comment";
-            this.generate_comment.UseVisualStyleBackColor = true;
-            this.generate_comment.Click += new System.EventHandler(this.generate_comment_Click);
-            // 
-            // commentTxtBox
-            // 
-            this.commentTxtBox.AccessibleName = "comment";
-            this.commentTxtBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.commentTxtBox.Location = new System.Drawing.Point(0, 20);
-            this.commentTxtBox.Name = "commentTxtBox";
-            this.commentTxtBox.Size = new System.Drawing.Size(264, 463);
-            this.commentTxtBox.TabIndex = 10;
-            this.commentTxtBox.Text = "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Add other comments here:";
-            // 
-            // clear
-            // 
-            this.clear.Location = new System.Drawing.Point(187, 488);
-            this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(75, 23);
-            this.clear.TabIndex = 12;
-            this.clear.Text = "clear";
-            this.clear.UseVisualStyleBackColor = true;
-            this.clear.Click += new System.EventHandler(this.clear_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(3, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(180, 17);
-            this.checkBox1.TabIndex = 13;
-            this.checkBox1.Text = "this value is set in Assignment.cs";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // checkBox10
             // 
@@ -342,7 +342,7 @@ namespace TA_Comment_Generator
             this.CheckBoxPanel.Controls.Add(this.checkBox10);
             this.CheckBoxPanel.Location = new System.Drawing.Point(12, 12);
             this.CheckBoxPanel.Name = "CheckBoxPanel";
-            this.CheckBoxPanel.Size = new System.Drawing.Size(273, 470);
+            this.CheckBoxPanel.Size = new System.Drawing.Size(301, 437);
             this.CheckBoxPanel.TabIndex = 24;
             // 
             // CommentBoxPanel
@@ -351,16 +351,233 @@ namespace TA_Comment_Generator
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CommentBoxPanel.Controls.Add(this.commentTxtBox);
             this.CommentBoxPanel.Controls.Add(this.label1);
-            this.CommentBoxPanel.Location = new System.Drawing.Point(291, 15);
+            this.CommentBoxPanel.Location = new System.Drawing.Point(610, 15);
             this.CommentBoxPanel.Name = "CommentBoxPanel";
-            this.CommentBoxPanel.Size = new System.Drawing.Size(267, 496);
+            this.CommentBoxPanel.Size = new System.Drawing.Size(267, 462);
             this.CommentBoxPanel.TabIndex = 25;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.checkBox20);
+            this.panel1.Controls.Add(this.checkBox21);
+            this.panel1.Controls.Add(this.checkBox22);
+            this.panel1.Controls.Add(this.checkBox23);
+            this.panel1.Controls.Add(this.checkBox24);
+            this.panel1.Controls.Add(this.checkBox25);
+            this.panel1.Controls.Add(this.checkBox26);
+            this.panel1.Controls.Add(this.checkBox27);
+            this.panel1.Controls.Add(this.checkBox28);
+            this.panel1.Controls.Add(this.checkBox29);
+            this.panel1.Controls.Add(this.checkBox30);
+            this.panel1.Controls.Add(this.checkBox31);
+            this.panel1.Controls.Add(this.checkBox32);
+            this.panel1.Controls.Add(this.checkBox33);
+            this.panel1.Controls.Add(this.checkBox34);
+            this.panel1.Controls.Add(this.checkBox35);
+            this.panel1.Controls.Add(this.checkBox36);
+            this.panel1.Controls.Add(this.checkBox37);
+            this.panel1.Controls.Add(this.checkBox38);
+            this.panel1.Location = new System.Drawing.Point(319, 15);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(285, 434);
+            this.panel1.TabIndex = 25;
+            // 
+            // checkBox20
+            // 
+            this.checkBox20.AutoSize = true;
+            this.checkBox20.Location = new System.Drawing.Point(3, 3);
+            this.checkBox20.Name = "checkBox20";
+            this.checkBox20.Size = new System.Drawing.Size(180, 17);
+            this.checkBox20.TabIndex = 13;
+            this.checkBox20.Text = "this value is set in Assignment.cs";
+            this.checkBox20.UseVisualStyleBackColor = true;
+            // 
+            // checkBox21
+            // 
+            this.checkBox21.AutoSize = true;
+            this.checkBox21.Location = new System.Drawing.Point(3, 416);
+            this.checkBox21.Name = "checkBox21";
+            this.checkBox21.Size = new System.Drawing.Size(180, 17);
+            this.checkBox21.TabIndex = 23;
+            this.checkBox21.Text = "this value is set in Assignment.cs";
+            this.checkBox21.UseVisualStyleBackColor = true;
+            // 
+            // checkBox22
+            // 
+            this.checkBox22.AutoSize = true;
+            this.checkBox22.Location = new System.Drawing.Point(3, 26);
+            this.checkBox22.Name = "checkBox22";
+            this.checkBox22.Size = new System.Drawing.Size(180, 17);
+            this.checkBox22.TabIndex = 1;
+            this.checkBox22.Text = "this value is set in Assignment.cs";
+            this.checkBox22.UseVisualStyleBackColor = true;
+            // 
+            // checkBox23
+            // 
+            this.checkBox23.AutoSize = true;
+            this.checkBox23.Location = new System.Drawing.Point(3, 393);
+            this.checkBox23.Name = "checkBox23";
+            this.checkBox23.Size = new System.Drawing.Size(180, 17);
+            this.checkBox23.TabIndex = 22;
+            this.checkBox23.Text = "this value is set in Assignment.cs";
+            this.checkBox23.UseVisualStyleBackColor = true;
+            // 
+            // checkBox24
+            // 
+            this.checkBox24.AutoSize = true;
+            this.checkBox24.Location = new System.Drawing.Point(3, 49);
+            this.checkBox24.Name = "checkBox24";
+            this.checkBox24.Size = new System.Drawing.Size(180, 17);
+            this.checkBox24.TabIndex = 2;
+            this.checkBox24.Text = "this value is set in Assignment.cs";
+            this.checkBox24.UseVisualStyleBackColor = true;
+            // 
+            // checkBox25
+            // 
+            this.checkBox25.AutoSize = true;
+            this.checkBox25.Location = new System.Drawing.Point(3, 370);
+            this.checkBox25.Name = "checkBox25";
+            this.checkBox25.Size = new System.Drawing.Size(180, 17);
+            this.checkBox25.TabIndex = 21;
+            this.checkBox25.Text = "this value is set in Assignment.cs";
+            this.checkBox25.UseVisualStyleBackColor = true;
+            // 
+            // checkBox26
+            // 
+            this.checkBox26.AutoSize = true;
+            this.checkBox26.Location = new System.Drawing.Point(3, 72);
+            this.checkBox26.Name = "checkBox26";
+            this.checkBox26.Size = new System.Drawing.Size(180, 17);
+            this.checkBox26.TabIndex = 3;
+            this.checkBox26.Text = "this value is set in Assignment.cs";
+            this.checkBox26.UseVisualStyleBackColor = true;
+            // 
+            // checkBox27
+            // 
+            this.checkBox27.AutoSize = true;
+            this.checkBox27.Location = new System.Drawing.Point(3, 347);
+            this.checkBox27.Name = "checkBox27";
+            this.checkBox27.Size = new System.Drawing.Size(180, 17);
+            this.checkBox27.TabIndex = 20;
+            this.checkBox27.Text = "this value is set in Assignment.cs";
+            this.checkBox27.UseVisualStyleBackColor = true;
+            // 
+            // checkBox28
+            // 
+            this.checkBox28.AutoSize = true;
+            this.checkBox28.Location = new System.Drawing.Point(3, 95);
+            this.checkBox28.Name = "checkBox28";
+            this.checkBox28.Size = new System.Drawing.Size(180, 17);
+            this.checkBox28.TabIndex = 4;
+            this.checkBox28.Text = "this value is set in Assignment.cs";
+            this.checkBox28.UseVisualStyleBackColor = true;
+            // 
+            // checkBox29
+            // 
+            this.checkBox29.AutoSize = true;
+            this.checkBox29.Location = new System.Drawing.Point(3, 324);
+            this.checkBox29.Name = "checkBox29";
+            this.checkBox29.Size = new System.Drawing.Size(180, 17);
+            this.checkBox29.TabIndex = 19;
+            this.checkBox29.Text = "this value is set in Assignment.cs";
+            this.checkBox29.UseVisualStyleBackColor = true;
+            // 
+            // checkBox30
+            // 
+            this.checkBox30.AutoSize = true;
+            this.checkBox30.Location = new System.Drawing.Point(3, 118);
+            this.checkBox30.Name = "checkBox30";
+            this.checkBox30.Size = new System.Drawing.Size(180, 17);
+            this.checkBox30.TabIndex = 5;
+            this.checkBox30.Text = "this value is set in Assignment.cs";
+            this.checkBox30.UseVisualStyleBackColor = true;
+            // 
+            // checkBox31
+            // 
+            this.checkBox31.AutoSize = true;
+            this.checkBox31.Location = new System.Drawing.Point(3, 301);
+            this.checkBox31.Name = "checkBox31";
+            this.checkBox31.Size = new System.Drawing.Size(180, 17);
+            this.checkBox31.TabIndex = 18;
+            this.checkBox31.Text = "this value is set in Assignment.cs";
+            this.checkBox31.UseVisualStyleBackColor = true;
+            // 
+            // checkBox32
+            // 
+            this.checkBox32.AutoSize = true;
+            this.checkBox32.Location = new System.Drawing.Point(3, 141);
+            this.checkBox32.Name = "checkBox32";
+            this.checkBox32.Size = new System.Drawing.Size(180, 17);
+            this.checkBox32.TabIndex = 6;
+            this.checkBox32.Text = "this value is set in Assignment.cs";
+            this.checkBox32.UseVisualStyleBackColor = true;
+            // 
+            // checkBox33
+            // 
+            this.checkBox33.AutoSize = true;
+            this.checkBox33.Location = new System.Drawing.Point(3, 278);
+            this.checkBox33.Name = "checkBox33";
+            this.checkBox33.Size = new System.Drawing.Size(180, 17);
+            this.checkBox33.TabIndex = 17;
+            this.checkBox33.Text = "this value is set in Assignment.cs";
+            this.checkBox33.UseVisualStyleBackColor = true;
+            // 
+            // checkBox34
+            // 
+            this.checkBox34.AutoSize = true;
+            this.checkBox34.Location = new System.Drawing.Point(3, 164);
+            this.checkBox34.Name = "checkBox34";
+            this.checkBox34.Size = new System.Drawing.Size(180, 17);
+            this.checkBox34.TabIndex = 7;
+            this.checkBox34.Text = "this value is set in Assignment.cs";
+            this.checkBox34.UseVisualStyleBackColor = true;
+            // 
+            // checkBox35
+            // 
+            this.checkBox35.AutoSize = true;
+            this.checkBox35.Location = new System.Drawing.Point(3, 255);
+            this.checkBox35.Name = "checkBox35";
+            this.checkBox35.Size = new System.Drawing.Size(180, 17);
+            this.checkBox35.TabIndex = 16;
+            this.checkBox35.Text = "this value is set in Assignment.cs";
+            this.checkBox35.UseVisualStyleBackColor = true;
+            // 
+            // checkBox36
+            // 
+            this.checkBox36.AutoSize = true;
+            this.checkBox36.Location = new System.Drawing.Point(3, 187);
+            this.checkBox36.Name = "checkBox36";
+            this.checkBox36.Size = new System.Drawing.Size(180, 17);
+            this.checkBox36.TabIndex = 8;
+            this.checkBox36.Text = "this value is set in Assignment.cs";
+            this.checkBox36.UseVisualStyleBackColor = true;
+            // 
+            // checkBox37
+            // 
+            this.checkBox37.AutoSize = true;
+            this.checkBox37.Location = new System.Drawing.Point(3, 232);
+            this.checkBox37.Name = "checkBox37";
+            this.checkBox37.Size = new System.Drawing.Size(180, 17);
+            this.checkBox37.TabIndex = 15;
+            this.checkBox37.Text = "this value is set in Assignment.cs";
+            this.checkBox37.UseVisualStyleBackColor = true;
+            // 
+            // checkBox38
+            // 
+            this.checkBox38.AutoSize = true;
+            this.checkBox38.Location = new System.Drawing.Point(3, 209);
+            this.checkBox38.Name = "checkBox38";
+            this.checkBox38.Size = new System.Drawing.Size(180, 17);
+            this.checkBox38.TabIndex = 14;
+            this.checkBox38.Text = "this value is set in Assignment.cs";
+            this.checkBox38.UseVisualStyleBackColor = true;
             // 
             // Assignment2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 523);
+            this.ClientSize = new System.Drawing.Size(889, 489);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.CommentBoxPanel);
             this.Controls.Add(this.CheckBoxPanel);
             this.Controls.Add(this.clear);
@@ -371,6 +588,8 @@ namespace TA_Comment_Generator
             this.CheckBoxPanel.PerformLayout();
             this.CommentBoxPanel.ResumeLayout(false);
             this.CommentBoxPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -402,6 +621,26 @@ namespace TA_Comment_Generator
         private System.Windows.Forms.Button clear;
         private Panel CheckBoxPanel;
         private Panel CommentBoxPanel;
+        private Panel panel1;
+        private CheckBox checkBox20;
+        private CheckBox checkBox21;
+        private CheckBox checkBox22;
+        private CheckBox checkBox23;
+        private CheckBox checkBox24;
+        private CheckBox checkBox25;
+        private CheckBox checkBox26;
+        private CheckBox checkBox27;
+        private CheckBox checkBox28;
+        private CheckBox checkBox29;
+        private CheckBox checkBox30;
+        private CheckBox checkBox31;
+        private CheckBox checkBox32;
+        private CheckBox checkBox33;
+        private CheckBox checkBox34;
+        private CheckBox checkBox35;
+        private CheckBox checkBox36;
+        private CheckBox checkBox37;
+        private CheckBox checkBox38;
     }
 }
 

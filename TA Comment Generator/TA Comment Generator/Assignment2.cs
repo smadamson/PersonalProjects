@@ -22,6 +22,11 @@ namespace TA_Comment_Generator
         //Overall code style
         string oneText, one, twoText, two, threeText, three, fourText, four, fiveText, five, sixText, six, sevenText, seven, eightText, eight, nineText, nine, tenText, ten, elevenText, eleven;
 
+        private void commentTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         //Analysis doc
         string twelveText, twelve, thirteenText, thirteen, fourteenText, fourteen;
 
@@ -30,11 +35,12 @@ namespace TA_Comment_Generator
 
         /****************    Assignment particular categories   *************************/
         //Assignment 2 NBody problem
-
-
+        string twentyText, twenty, twenty1Text, twenty1, twenty2Text, twenty2, twenty3Text, twenty3, twenty4Text, twenty4, twenty5Text, twenty5, twenty6Text, twenty6, twenty7Text, twenty7, twenty8Text, twenty8, twenty9Text, twenty9, thirtyText, thirty, thirty1Text, thirty1;
+       
         public Assignment2()
         {
             InitializeComponent();
+            CreateContainers();
             Setup();
 
             //Update the GUI text displayed next to each checkbox. 
@@ -44,6 +50,46 @@ namespace TA_Comment_Generator
                 cbox.Text = textFields[i];
                 i++;
             }
+        }
+
+        /*
+         * This is really dumb, there's got to be a collection of these from the frame. 
+         * How Can I do this better? 
+         */
+        private void CreateContainers()
+        {
+            checkboxes.Add(checkBox1);
+            checkboxes.Add(checkBox2);
+            checkboxes.Add(checkBox3);
+            checkboxes.Add(checkBox4);
+            checkboxes.Add(checkBox5);
+            checkboxes.Add(checkBox6);
+            checkboxes.Add(checkBox7);
+            checkboxes.Add(checkBox8);
+            checkboxes.Add(checkBox9);
+            checkboxes.Add(checkBox10);
+            checkboxes.Add(checkBox11);
+            checkboxes.Add(checkBox12);
+            checkboxes.Add(checkBox13);
+            checkboxes.Add(checkBox14);
+            checkboxes.Add(checkBox15);
+            checkboxes.Add(checkBox16);
+            checkboxes.Add(checkBox17);
+            checkboxes.Add(checkBox18);
+            checkboxes.Add(checkBox19);
+            checkboxes.Add(checkBox20);
+            checkboxes.Add(checkBox21);
+            checkboxes.Add(checkBox22);
+            checkboxes.Add(checkBox23);
+            checkboxes.Add(checkBox24);
+            checkboxes.Add(checkBox25);
+            checkboxes.Add(checkBox26);
+            checkboxes.Add(checkBox27);
+            checkboxes.Add(checkBox28);
+            checkboxes.Add(checkBox29);
+            //checkboxes.Add(checkBox30);
+            //checkboxes.Add(checkBox31);
+           //checkboxes.Add(checkBox32);
         }
 
         /**
@@ -122,7 +168,7 @@ namespace TA_Comment_Generator
             textFields[9] = tenText;
             comments.Add(ten);
 
-            elevenText = "Extra- does nothing";
+            elevenText = "";
             eleven = "";
             textFields[10] = elevenText;
             comments.Add(one);
@@ -175,6 +221,86 @@ namespace TA_Comment_Generator
             ninteen = "You forgot to include a design doc in your submission.";
             textFields[18] = nineteenText;
             comments.Add(ninteen);
+
+            /*  Star class:
+              [] super nova -should end at some point
+              [] flicker
+
+              Planet / Flotsam / Star
+              [] super constructor
+              [] update display size
+              [] Set the color in paint component
+              [] used improper coordinates in drawOval
+
+              Geometry Vector
+              [] No tests
+              [] Good tests
+              [] Tests could be better (what do good tests look like?)
+              [] Not creating a temp mag in normalize
+              [] Not using the points super constructor
+
+  */
+            //Star
+            twentyText = "Never ending super nova";
+            twenty = "";
+            textFields[19] = twentyText;
+            comments.Add(twenty);
+
+            twenty1Text = "Sun does not flicker";
+            twenty1 = "";
+            textFields[20] = twenty1Text;
+            comments.Add(twenty1);
+
+            //Planet / Flotsam / Star
+            twenty2Text = "Missing call to super in Geometry Vec.";
+            twenty2 = "Inside the geometry vector constructor you are not calling the points constructor by using the keyword super. This means you never propery create your point. ";
+            textFields[21] = twenty2Text;
+            comments.Add(twenty2);
+
+            twenty3Text = "Dont call super constructor";
+            twenty3 = "";
+            textFields[22] = twenty3Text;
+            comments.Add(twenty3);
+
+            twenty4Text = "Dont update the display size";
+            twenty4 = "";
+            textFields[23] = twenty4Text;
+            comments.Add(twenty4);
+
+            twenty5Text = "Color is set inside paintComponent";
+            twenty5 = "";
+            textFields[24] = twenty5Text;
+            comments.Add(twenty5);
+
+            twenty6Text = "Used improper coordinates in drawOval";
+            twenty6 = "";
+            textFields[25] = twenty6Text;
+            comments.Add(twenty6);
+
+            twenty7Text = "There are no tests for geometry vector";
+            twenty7 = "";
+            textFields[26] = twenty7Text;
+            comments.Add(twenty7);
+
+            twenty8Text = "Good tests for geometry vector";
+            twenty8 = "";
+            textFields[27] = twenty8Text;
+            comments.Add(twenty8);
+
+            twenty9Text = "Not creating a temp mag in normalize";
+            twenty9 = "";
+            textFields[28] = twenty9Text;
+            comments.Add(twenty9);
+
+            //thirtyText = "";
+            //thirty = "";
+            //textFields[29] = thirtyText;
+            //comments.Add(thirty);
+
+            //thirty1Text = "";
+            //thirty1 = "";
+            //textFields[30] = thirty1Text;
+            //comments.Add(thirty1);
         }
 
         /**
