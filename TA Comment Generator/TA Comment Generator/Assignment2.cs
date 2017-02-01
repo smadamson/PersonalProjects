@@ -43,7 +43,7 @@ namespace TA_Comment_Generator
             CreateContainers();
             Setup();
 
-            //Update the GUI text displayed next to each checkbox. 
+            //Update the GUI text displayed next to each check box. 
             int i = 0;
             foreach (CheckBox cbox in checkboxes)
             {
@@ -109,11 +109,11 @@ namespace TA_Comment_Generator
          [] Good use of helper methods
          [] Bad use of helper methods
          [] Code did not compile or has errors
-         [] Improperly imlemented constructors/methods (not following directions)
+         [] Improperly implemented constructors/methods (not following directions)
          [] good start, start early
          [] Well done, keep up the good work.
          [] Bad use of public instance variables
-         [] Left in println statements used for debugging
+         [] Left in print statements used for debugging
          [] Left in commented out code
       */
 
@@ -143,7 +143,7 @@ namespace TA_Comment_Generator
             textFields[4] = fiveText;
             comments.Add(five);
 
-            sixText = "Improperly imlemented constructors/methods (not following specs)";
+            sixText = "Improperly implemented constructors/methods (not following specs)";
             six = "You have implemented some of the constructors or methods improperly. It is very important that you follow the specifications exactly on all assignments.";
             textFields[5] = sixText;
             comments.Add(six);
@@ -163,8 +163,8 @@ namespace TA_Comment_Generator
             textFields[8] = nineText;
             comments.Add(nine);
 
-            tenText = "Left in Println statements used in dubgging";
-            ten = "Do your best to turn in professional looking and functioning code. In general this means removing commented out code and println statements from your submission.";
+            tenText = "Left in print statements used in debugging";
+            ten = "Do your best to turn in professional looking and functioning code. In general this means removing commented out code and print statements from your submission.";
             textFields[9] = tenText;
             comments.Add(ten);
 
@@ -201,14 +201,14 @@ namespace TA_Comment_Generator
             textFields[14] = fifteenText;
             comments.Add(fifteen);
 
-            sixteenText = "No assignment.properties file/ not propery formatted";
+            sixteenText = "No assignment.properties file/ not properly formatted";
             sixteen = "You either didn't submit an assignment.properties file or you did not format it properly, be sure to follow the specs exactly (every space must be exactly correct). This file is used by a computer to give you credit so this is very important!";
             textFields[15] = sixteenText;
             comments.Add(sixteen);
 
             //Design document
             seventeenText = "Good design doc";
-            seventeen = "Well done on your desgn doc, you answered all of the questions and it looks great";
+            seventeen = "Well done on your design doc, you answered all of the questions and it looks great";
             textFields[16] = seventeenText;
             comments.Add(seventeen);
 
@@ -242,33 +242,33 @@ namespace TA_Comment_Generator
   */
             //Star
             twentyText = "Never ending super nova";
-            twenty = "";
+            twenty = "When a star is clicked on, it supernovas but the super nova is never ending which isn't really what happens. A star should supernova only momentarily.";
             textFields[19] = twentyText;
             comments.Add(twenty);
 
             twenty1Text = "Sun does not flicker";
-            twenty1 = "";
+            twenty1 = "When drawn a star is supposed to flicker, this does not appear to be implemented.";
             textFields[20] = twenty1Text;
             comments.Add(twenty1);
 
             //Planet / Flotsam / Star
             twenty2Text = "Missing call to super in Geometry Vec.";
-            twenty2 = "Inside the geometry vector constructor you are not calling the points constructor by using the keyword super. This means you never propery create your point. ";
+            twenty2 = "Inside the geometry vector constructor you are not calling the points constructor by using the keyword super. This means you never properly create your point. ";
             textFields[21] = twenty2Text;
             comments.Add(twenty2);
 
-            twenty3Text = "Dont call super constructor";
-            twenty3 = "";
+            twenty3Text = "Don't call super constructor";
+            twenty3 = "Your satellite classes should call the base constructor using the super method. ";
             textFields[22] = twenty3Text;
             comments.Add(twenty3);
 
-            twenty4Text = "Dont update the display size";
+            twenty4Text = "";//"Don't update the display size";
             twenty4 = "";
             textFields[23] = twenty4Text;
             comments.Add(twenty4);
 
             twenty5Text = "Color is set inside paintComponent";
-            twenty5 = "";
+            twenty5 = "You set the color inside of pantComponent. This is redundant because it was already set inside of the starField class for you. Redundancy in this method is expensive because paintComponent is called every time the screen repaints. You should avoid this in the future. ";
             textFields[24] = twenty5Text;
             comments.Add(twenty5);
 
@@ -278,17 +278,17 @@ namespace TA_Comment_Generator
             comments.Add(twenty6);
 
             twenty7Text = "There are no tests for geometry vector";
-            twenty7 = "";
+            twenty7 = "There were (or could have been) errors in your Geometry Vector class that your testing would not have found. This could have (or did) caused you a large amount of time debugging the Solar System when in reality it was the Vector class that caused the problem.";
             textFields[26] = twenty7Text;
             comments.Add(twenty7);
 
             twenty8Text = "Good tests for geometry vector";
-            twenty8 = "";
+            twenty8 = "Well done creating tests for your geometry vector class. I'm sure this saved you a lot of time debugging.";
             textFields[27] = twenty8Text;
             comments.Add(twenty8);
 
-            twenty9Text = "Not creating a temp mag in normalize";
-            twenty9 = "";
+            twenty9Text = "No temp mag in normalize or changing velocity";
+            twenty9 = "There were instances in your code where you applied an operation to a field of the class that should not have been changed at that time. In general, when you are doing a string of math operations, COPY the original data into a TEMPORARY local variable, do the math there, and then assign the results as appropriate.";
             textFields[28] = twenty9Text;
             comments.Add(twenty9);
 
