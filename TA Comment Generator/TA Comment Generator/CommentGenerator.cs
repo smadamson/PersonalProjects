@@ -23,7 +23,7 @@ namespace TA_Comment_Generator
         //A few special comments
         String startEarlyNextTime, wellDone;
         //TODO: Change me!
-        String percent_Of_Grade_Analysis_Doc_Is_Worth = "60%";
+        String percent_Of_Grade_Analysis_Doc_Is_Worth = "30%";
 
         public CommentGenerator()
         {
@@ -216,8 +216,8 @@ namespace TA_Comment_Generator
             comments.Add("Well done creating tests for your classes. I'm sure this saved you a lot of time debugging.");
 
             //AssignmentSpecifics
-            textFieldsArr.Add("");
-            comments.Add("");
+            textFieldsArr.Add("Not explaining Insertion sort complexity");
+            comments.Add("Your Analysis looks good except you claim that insertion sort has O(n^2) and don't explain why. You should have said something like \"insertion sort is O(n ^ 2) because it must iterate through every element once and for each element it must compare it to every other element.This results in a nested loop which means we run through N elements N times resulting in O(n ^ 2) complexity\".") ;
 
 
         }
