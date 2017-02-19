@@ -22,11 +22,8 @@ namespace TA_Comment_Generator
 
         //A few special comments
         String startEarlyNextTime, wellDone;
-
-        private void commentTxtBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        //TODO: Change me!
+        String percent_Of_Grade_Analysis_Doc_Is_Worth = "60%";
 
         public CommentGenerator()
         {
@@ -39,7 +36,14 @@ namespace TA_Comment_Generator
             int i = 0;
             foreach (CheckBox cbox in checkboxes)
             {
-                cbox.Text = textFields[i];
+                if (i >= textFields.Length)
+                {
+                    break;
+                }
+                else
+                {
+                    cbox.Text = textFields[i];
+                }
                 i++;
             }
         }
@@ -50,38 +54,66 @@ namespace TA_Comment_Generator
          */
         private void CreateContainers()
         {
-            checkboxes.Add(checkBox1);
-            checkboxes.Add(checkBox2);
-            checkboxes.Add(checkBox3);
-            checkboxes.Add(checkBox4);
-            checkboxes.Add(checkBox5);
-            checkboxes.Add(checkBox6);
-            checkboxes.Add(checkBox7);
-            checkboxes.Add(checkBox8);
-            checkboxes.Add(checkBox9);
-            checkboxes.Add(checkBox10);
-            checkboxes.Add(checkBox11);
-            checkboxes.Add(checkBox12);
-            checkboxes.Add(checkBox13);
-            checkboxes.Add(checkBox14);
-            checkboxes.Add(checkBox15);
-            checkboxes.Add(checkBox16);
-            checkboxes.Add(checkBox17);
-            checkboxes.Add(checkBox18);
-            checkboxes.Add(checkBox19);
-            checkboxes.Add(checkBox20);
-            checkboxes.Add(checkBox21);
-            checkboxes.Add(checkBox22);
-            checkboxes.Add(checkBox23);
-            checkboxes.Add(checkBox24);
-            checkboxes.Add(checkBox25);
-            checkboxes.Add(checkBox26);
-            checkboxes.Add(checkBox27);
-            checkboxes.Add(checkBox28);
-            checkboxes.Add(checkBox29);
-            checkboxes.Add(checkBox30);
-            checkboxes.Add(checkBox31);
-            //checkboxes.Add(checkBox32);
+            /*
+            foreach (Control component in CheckBoxPanel.Controls)
+            {
+                if (component is CheckBox)
+                {
+                    checkboxes.Add((CheckBox)component);
+                }
+            }
+            foreach (Control component in panel1.Controls)
+            {
+                if(component is CheckBox)
+                {
+                    checkboxes.Add((CheckBox)component);
+                }
+            }
+            */
+             checkboxes.Add(checkBox1);
+             checkboxes.Add(checkBox2);
+             checkboxes.Add(checkBox3);
+             checkboxes.Add(checkBox4);
+             checkboxes.Add(checkBox5);
+             checkboxes.Add(checkBox6);
+             checkboxes.Add(checkBox7);
+             checkboxes.Add(checkBox8);
+             checkboxes.Add(checkBox9);
+             checkboxes.Add(checkBox10);
+             checkboxes.Add(checkBox11);
+             checkboxes.Add(checkBox12);
+             checkboxes.Add(checkBox13);
+             checkboxes.Add(checkBox14);
+             checkboxes.Add(checkBox15);
+             checkboxes.Add(checkBox16);
+             checkboxes.Add(checkBox17);
+             checkboxes.Add(checkBox18);
+             checkboxes.Add(checkBox19);
+             checkboxes.Add(checkBox20);
+             checkboxes.Add(checkBox21);
+             checkboxes.Add(checkBox22);
+             checkboxes.Add(checkBox23);
+             checkboxes.Add(checkBox24);
+             checkboxes.Add(checkBox25);
+             checkboxes.Add(checkBox26);
+             checkboxes.Add(checkBox27);
+             checkboxes.Add(checkBox28);
+             checkboxes.Add(checkBox29);
+             checkboxes.Add(checkBox30);
+             checkboxes.Add(checkBox31);
+             checkboxes.Add(checkBox32);
+             checkboxes.Add(checkBox33);
+            checkboxes.Add(checkBox34);
+            checkboxes.Add(checkBox35);
+            checkboxes.Add(checkBox36);
+            checkboxes.Add(checkBox37);
+            checkboxes.Add(checkBox38);
+            checkboxes.Add(checkBox39);
+            checkboxes.Add(checkBox40);
+            checkboxes.Add(checkBox41);
+            checkboxes.Add(checkBox42);
+           // checkboxes.Add(checkBox43);
+            //checkboxes.Add(checkBox44);
         }
 
         /**
@@ -147,10 +179,10 @@ namespace TA_Comment_Generator
             comments.Add("Your analysis document looks good. There is a good explanation of the graph and you also include axis titles which is nice. You further demonstrate a good understanding of the complexity involved in the program.");
 
             textFieldsArr.Add("Analysis needs improvement");
-            comments.Add("In an analysis document try to analyze the algorithms in the code and explain their big-O complexity. For example, you might say that the jiggler function is O(n) because it loops through every circle once and jiggles it. You might also say that spread out is O(n^2) because it loops through each circle n times and n*n is n^2. Also, your analysis document should include a graph of FPS vs. Number of circles and that graph should have labeled axes.");
+            comments.Add("In an analysis document try to analyze the algorithms in the code and explain their big-O complexity. For example, you might say that the jiggler function is O(n) (where n represents the number of circles) because it loops through every circle once and jiggles it. Also, your analysis document should include several graphs with descriptive titles and labeled axis.");
 
             textFieldsArr.Add("No analysis");
-            comments.Add("You forgot to include your analysis document. Remember that the written portion of this assignment is worth 30% of your grade. It is very important that you demonstrate an understanding of your work.");
+            comments.Add("You forgot to include your analysis document. Remember that the written portion of this assignment is worth " + percent_Of_Grade_Analysis_Doc_Is_Worth + " of your grade. It is very important that you demonstrate an understanding of your work.");
 
             //Assignment.properties file
             textFieldsArr.Add("Good assignment.properties file");
@@ -173,13 +205,20 @@ namespace TA_Comment_Generator
             textFieldsArr.Add("Partner carried the team");
             comments.Add("It seems like your partner did a lot of the work on this assignment. Be sure that when you work the a partner you are practicing the techniques of pair programing. This means sitting at the same computer. It may seem frustrating now but it will help you improve your skills.");
 
-            textFieldsArr.Add("");
-            comments.Add("");
+            //Testing
+            textFieldsArr.Add("No Tests");
+            comments.Add("No tests were included on this assignment. As a developer testing is very important because it helps ensure your code is working as expected. Please be sure to include tests for your public methods and classes.");
 
+            textFieldsArr.Add("Bad Tests");
+            comments.Add("The tests for this assignment were insufficient. The testing requirement for assignments is meant to help you ensure your code is behaving as expected. Please test each public class and method thoroughly and include those tests when you turn in your assignment.");
+
+            textFieldsArr.Add("Good Tests");
+            comments.Add("Well done creating tests for your classes. I'm sure this saved you a lot of time debugging.");
 
             //AssignmentSpecifics
             textFieldsArr.Add("");
             comments.Add("");
+
 
         }
 
@@ -195,20 +234,22 @@ namespace TA_Comment_Generator
             foreach (string com in comments)
             {
                 //Add all of the checked boxes comments to the generated comment. 
-                if (checkboxes[i].Checked == true && (i != 6 || i != 7)) //Due to the nature of comments 7 and 8 (indexes 6 and 7), if they are checked I want them to be included at the end. 
+                if (checkboxes[i].Checked == true && (i != 6) && (i != 7)) //Due to the nature of comments 7 and 8 (indexes 6 and 7), if they are checked I want them to be included at the end. 
                 {
                     comment += com + "\n";
                 }
                 i++;
             }
 
+            //Add what is in the comment text box to the generated comment
+            comment += this.commentTxtBox.Text + "\n";
+
             //Due to the nature of comments 7 and 8, if they are checked I want them to be included at the end. 
             if (checkBox7.Checked == true)
                 comment += startEarlyNextTime + "\n";
-           else if (checkBox8.Checked == true)
+           if (checkBox8.Checked == true)
                 comment += wellDone + "\n";
-            else
-                comment += this.commentTxtBox.Text + "\n";                 //Add what is in the comment text box to the generated comment
+                               
 
             comment += "Please come see me in office hours if you have any questions about grading."; //An ending message. 
             this.commentTxtBox.Text = comment;
