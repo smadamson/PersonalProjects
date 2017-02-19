@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TA_Comment_Generator
 {
-    partial class Assignment2
+    partial class CommentGenerator
     {
         /// <summary>
         /// Create a list of checkboxes so that I can iterate through them later. It is important that they get added in order. 
