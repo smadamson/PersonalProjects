@@ -230,17 +230,8 @@ namespace TA_Comment_Generator
             textFieldsArr.Add("In line comparators defined");
             comments.Add("In your Sort function you defined a comparator and in your getLargestAnagramGroup you defined the same comparator. What should have been done instead is create a comparator class and passing in two instances of the same class into the insertion sort function at those locations. ");
 
-            textFieldsArr.Add("");
-            comments.Add("");
-
-            textFieldsArr.Add("");
-            comments.Add("");
-
-            textFieldsArr.Add("");
-            comments.Add("");
-
-            textFieldsArr.Add("");
-            comments.Add("");
+            //textFieldsArr.Add("");
+            //comments.Add("");
 
         }
 

@@ -94,7 +94,6 @@ namespace TA_Comment_Generator
             this.checkBox35 = new System.Windows.Forms.CheckBox();
             this.checkBox33 = new System.Windows.Forms.CheckBox();
             this.checkBox34 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.NewComment = new System.Windows.Forms.Button();
             this.Help = new System.Windows.Forms.Label();
             this.CheckBoxPanel.SuspendLayout();
@@ -687,15 +686,6 @@ namespace TA_Comment_Generator
             this.checkBox34.TabIndex = 7;
             this.checkBox34.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // NewComment
             // 
             this.NewComment.Location = new System.Drawing.Point(214, 578);
@@ -723,7 +713,6 @@ namespace TA_Comment_Generator
             this.ClientSize = new System.Drawing.Size(889, 613);
             this.Controls.Add(this.Help);
             this.Controls.Add(this.NewComment);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CommentBoxPanel);
             this.Controls.Add(this.CheckBoxPanel);
@@ -801,7 +790,6 @@ namespace TA_Comment_Generator
         private CheckBox checkBox41;
         private CheckBox checkBox40;
         private CheckBox checkBox39;
-        private Button button1;
         private Button NewComment;
         private Label Help;
     }
