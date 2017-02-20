@@ -30,6 +30,14 @@ namespace TA_Comment_Generator
             InitializeComponent();
             CreateContainers();
             Setup();
+            UpdateDisplay();
+        }
+
+        /*
+         * Updates the display so that the check boxes look like they should
+         */
+        private void UpdateDisplay()
+        {
             String[] textFields = textFieldsArr.ToArray();
 
             //Update the GUI text displayed next to each check box. 
@@ -70,39 +78,39 @@ namespace TA_Comment_Generator
                 }
             }
             */
-             checkboxes.Add(checkBox1);
-             checkboxes.Add(checkBox2);
-             checkboxes.Add(checkBox3);
-             checkboxes.Add(checkBox4);
-             checkboxes.Add(checkBox5);
-             checkboxes.Add(checkBox6);
-             checkboxes.Add(checkBox7);
-             checkboxes.Add(checkBox8);
-             checkboxes.Add(checkBox9);
-             checkboxes.Add(checkBox10);
-             checkboxes.Add(checkBox11);
-             checkboxes.Add(checkBox12);
-             checkboxes.Add(checkBox13);
-             checkboxes.Add(checkBox14);
-             checkboxes.Add(checkBox15);
-             checkboxes.Add(checkBox16);
-             checkboxes.Add(checkBox17);
-             checkboxes.Add(checkBox18);
-             checkboxes.Add(checkBox19);
-             checkboxes.Add(checkBox20);
-             checkboxes.Add(checkBox21);
-             checkboxes.Add(checkBox22);
-             checkboxes.Add(checkBox23);
-             checkboxes.Add(checkBox24);
-             checkboxes.Add(checkBox25);
-             checkboxes.Add(checkBox26);
-             checkboxes.Add(checkBox27);
-             checkboxes.Add(checkBox28);
-             checkboxes.Add(checkBox29);
-             checkboxes.Add(checkBox30);
-             checkboxes.Add(checkBox31);
-             checkboxes.Add(checkBox32);
-             checkboxes.Add(checkBox33);
+            checkboxes.Add(checkBox1);
+            checkboxes.Add(checkBox2);
+            checkboxes.Add(checkBox3);
+            checkboxes.Add(checkBox4);
+            checkboxes.Add(checkBox5);
+            checkboxes.Add(checkBox6);
+            checkboxes.Add(checkBox7);
+            checkboxes.Add(checkBox8);
+            checkboxes.Add(checkBox9);
+            checkboxes.Add(checkBox10);
+            checkboxes.Add(checkBox11);
+            checkboxes.Add(checkBox12);
+            checkboxes.Add(checkBox13);
+            checkboxes.Add(checkBox14);
+            checkboxes.Add(checkBox15);
+            checkboxes.Add(checkBox16);
+            checkboxes.Add(checkBox17);
+            checkboxes.Add(checkBox18);
+            checkboxes.Add(checkBox19);
+            checkboxes.Add(checkBox20);
+            checkboxes.Add(checkBox21);
+            checkboxes.Add(checkBox22);
+            checkboxes.Add(checkBox23);
+            checkboxes.Add(checkBox24);
+            checkboxes.Add(checkBox25);
+            checkboxes.Add(checkBox26);
+            checkboxes.Add(checkBox27);
+            checkboxes.Add(checkBox28);
+            checkboxes.Add(checkBox29);
+            checkboxes.Add(checkBox30);
+            checkboxes.Add(checkBox31);
+            checkboxes.Add(checkBox32);
+            checkboxes.Add(checkBox33);
             checkboxes.Add(checkBox34);
             checkboxes.Add(checkBox35);
             checkboxes.Add(checkBox36);
@@ -112,7 +120,7 @@ namespace TA_Comment_Generator
             checkboxes.Add(checkBox40);
             checkboxes.Add(checkBox41);
             checkboxes.Add(checkBox42);
-           // checkboxes.Add(checkBox43);
+            // checkboxes.Add(checkBox43);
             //checkboxes.Add(checkBox44);
         }
 
@@ -133,11 +141,11 @@ namespace TA_Comment_Generator
 
             textFieldsArr.Add("Bad comments");
             comments.Add("Your code should include Javadoc comments at the top of every method and there should be comments throughout the methods that describe the logic behind non-self-explanatory blocks of code.");
-            
+
 
             textFieldsArr.Add("Good use of helper methods");
             comments.Add("You showed a good use of private helper methods, throughout your code. This makes your code easier to read, employers, TA's, and professors really like this.");
-            
+
 
             textFieldsArr.Add("Bad use of helper methods");
             comments.Add("To make your code more readable you might consider adding more private helper methods to your code. One general rule of thumb is if your functions are longer than about 25 lines, you should try to extract some of the logic to a helper function.");
@@ -216,8 +224,8 @@ namespace TA_Comment_Generator
             comments.Add("Well done creating tests for your classes. I'm sure this saved you a lot of time debugging.");
 
             //AssignmentSpecifics
-            textFieldsArr.Add("");
-            comments.Add("");
+            //textFieldsArr.Add("");
+            //comments.Add("");
 
 
         }
@@ -247,12 +255,41 @@ namespace TA_Comment_Generator
             //Due to the nature of comments 7 and 8, if they are checked I want them to be included at the end. 
             if (checkBox7.Checked == true)
                 comment += startEarlyNextTime + "\n";
-           if (checkBox8.Checked == true)
+            if (checkBox8.Checked == true)
                 comment += wellDone + "\n";
-                               
+
 
             comment += "Please come see me in office hours if you have any questions about grading."; //An ending message. 
             this.commentTxtBox.Text = comment;
+        }
+
+        /**
+         * Creates and labels a new comment check box. The input for this must be very specifically formatted.
+         * The first line is the text that gets added to the check box and the second line is the  comment generated when the 
+         * check box is checked. 
+         */
+        private void NewComment_Click(object sender, EventArgs e)
+        {
+            String[] comment = (commentTxtBox.Text).Split('\n');
+            if (comment.Length < 2)
+            {
+                commentTxtBox.Text = "please include the comment generated on the next line.";
+            }
+            else
+            {
+                textFieldsArr.Add(comment[0]);
+                comments.Add(comment[1]);
+                UpdateDisplay();
+            }
+        }
+
+        /**
+         * Explains how to add a new comment. 
+         */
+        private void Help_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("To use the comment creation tool simply type the comment you'd like to generate in the text box.\nThe format is this:\n\n"
+                + "Text displayed next to check box\nComment generated when check box is clicked.\n\nBe sure to only include the text you'd like generated in the comment box.");
         }
 
         /**
