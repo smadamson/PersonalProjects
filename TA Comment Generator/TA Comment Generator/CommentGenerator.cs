@@ -219,6 +219,20 @@ namespace TA_Comment_Generator
             textFieldsArr.Add("Not explaining Insertion sort complexity");
             comments.Add("Your Analysis looks good except you claim that insertion sort has O(n^2) and don't explain why. You should have said something like \"insertion sort is O(n ^ 2) because it must iterate through every element once and for each element it must compare it to every other element.This results in a nested loop which means we run through N elements N times resulting in O(n ^ 2) complexity\".") ;
 
+            textFieldsArr.Add("In line comparators defined");
+            comments.Add("In your Sort function you defined a comparator and in your getLargestAnagramGroup you defined the same comparator. What should have been done instead is create a comparator class and passing in two instances of the same class into the insertion sort function at those locations. ");
+
+            textFieldsArr.Add("");
+            comments.Add("");
+
+            textFieldsArr.Add("");
+            comments.Add("");
+
+            textFieldsArr.Add("");
+            comments.Add("");
+
+            textFieldsArr.Add("");
+            comments.Add("");
 
         }
 
