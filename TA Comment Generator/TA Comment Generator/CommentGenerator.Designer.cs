@@ -62,11 +62,11 @@ namespace TA_Comment_Generator
             this.checkBox19 = new System.Windows.Forms.CheckBox();
             this.CheckBoxPanel = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.checkBox20 = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.checkBox20 = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.CommentBoxPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -94,6 +94,9 @@ namespace TA_Comment_Generator
             this.checkBox35 = new System.Windows.Forms.CheckBox();
             this.checkBox33 = new System.Windows.Forms.CheckBox();
             this.checkBox34 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.NewComment = new System.Windows.Forms.Button();
+            this.Help = new System.Windows.Forms.Label();
             this.CheckBoxPanel.SuspendLayout();
             this.CommentBoxPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -370,15 +373,6 @@ namespace TA_Comment_Generator
             this.label6.TabIndex = 28;
             this.label6.Text = "Design Doc";
             // 
-            // checkBox20
-            // 
-            this.checkBox20.AutoSize = true;
-            this.checkBox20.Location = new System.Drawing.Point(6, 21);
-            this.checkBox20.Name = "checkBox20";
-            this.checkBox20.Size = new System.Drawing.Size(15, 14);
-            this.checkBox20.TabIndex = 13;
-            this.checkBox20.UseVisualStyleBackColor = true;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -414,6 +408,15 @@ namespace TA_Comment_Generator
             this.label2.Size = new System.Drawing.Size(94, 13);
             this.label2.TabIndex = 24;
             this.label2.Text = "Overall Code Style";
+            // 
+            // checkBox20
+            // 
+            this.checkBox20.AutoSize = true;
+            this.checkBox20.Location = new System.Drawing.Point(6, 21);
+            this.checkBox20.Name = "checkBox20";
+            this.checkBox20.Size = new System.Drawing.Size(15, 14);
+            this.checkBox20.TabIndex = 13;
+            this.checkBox20.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -684,11 +687,43 @@ namespace TA_Comment_Generator
             this.checkBox34.TabIndex = 7;
             this.checkBox34.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // NewComment
+            // 
+            this.NewComment.Location = new System.Drawing.Point(214, 578);
+            this.NewComment.Name = "NewComment";
+            this.NewComment.Size = new System.Drawing.Size(126, 23);
+            this.NewComment.TabIndex = 27;
+            this.NewComment.Text = "create new comment";
+            this.NewComment.UseVisualStyleBackColor = true;
+            this.NewComment.Click += new System.EventHandler(this.NewComment_Click);
+            // 
+            // Help
+            // 
+            this.Help.AutoSize = true;
+            this.Help.Location = new System.Drawing.Point(346, 585);
+            this.Help.Name = "Help";
+            this.Help.Size = new System.Drawing.Size(29, 13);
+            this.Help.TabIndex = 28;
+            this.Help.Text = "Help";
+            this.Help.Click += new System.EventHandler(this.Help_Click);
+            // 
             // CommentGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 613);
+            this.Controls.Add(this.Help);
+            this.Controls.Add(this.NewComment);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CommentBoxPanel);
             this.Controls.Add(this.CheckBoxPanel);
@@ -703,6 +738,7 @@ namespace TA_Comment_Generator
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -765,6 +801,9 @@ namespace TA_Comment_Generator
         private CheckBox checkBox41;
         private CheckBox checkBox40;
         private CheckBox checkBox39;
+        private Button button1;
+        private Button NewComment;
+        private Label Help;
     }
 }
 
