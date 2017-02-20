@@ -224,9 +224,30 @@ namespace TA_Comment_Generator
             comments.Add("Well done creating tests for your classes. I'm sure this saved you a lot of time debugging.");
 
             //AssignmentSpecifics
-            //textFieldsArr.Add("");
-            //comments.Add("");
+            textFieldsArr.Add("Graphs with multiple lines");
+            comments.Add("The graphs in your analysis contain multiple lines where each line represents a different sort. This is OK sometimes but only when the graphs scale together nicely. In this case it is not OK because the scale of the graphs makes it impossible to see how the sorts are behaving.");
 
+            textFieldsArr.Add("Not properly analyzing complexity");
+            comments.Add("In the analysis, you make some claims about the complexity of the sorts i.e. that insertion sort has O(n^2) but you don't explain why. You could have said something like \"insertion sort is O(n ^ 2) because it must iterate through every element once and for each element it must compare it to every other element. This results in a nested loop which means we run through N elements N times resulting in O(n ^ 2) complexity\".") ;
+
+            textFieldsArr.Add("Describe your graphs");
+            comments.Add("The analysis should include a thorough analysis and explanation of each graph. This doesn't need to be long it could be something like: \" The graph above is a plot running insertion sort on an array of length N."
+                + "As you can see the time increase is quadratic which is expected because insertion sort is O(n^2). The graph models this complexity nicely.\" Because we have already evaluated insertion sort you don't need to explain why insertion sort is O(n^2) but if this were a new sort you could add a sentence or two explaining why the complexity is O(nlogn), for example.");
+
+            textFieldsArr.Add("Graphs don't make sense");
+            comments.Add("I can't understand what your graphs are showing. Please include graphs with legends, labeled axis, and one solid line which clearly depicts one sort function.");
+
+            textFieldsArr.Add("");
+            comments.Add("");
+
+            textFieldsArr.Add("");
+            comments.Add("");
+
+            textFieldsArr.Add("MergeSort bad");
+            comments.Add("It appears there is an error in the merge sort algorithm, some of our tests failed. Be sure your tests are very thorough in the future so that you can avoid this.");
+
+            textFieldsArr.Add("QuickSort bad");
+            comments.Add("It appears there is an error in the quick sort algorithm, some of our tests failed. Be sure your tests are very thorough in the future so that you can avoid this.");
 
         }
 
