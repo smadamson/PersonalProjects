@@ -65,8 +65,11 @@ public class HackerDisplay
     final static Point FIREWALL_LINE_POINT_3_THEM = new Point(FIREWALL_IMAGE_LOCATION_3.x + 20,
             FIREWALL_IMAGE_LOCATION_3.y + 150);
 
-    final static Point OUR_SYSTEM_IMAGE_LOCATION = new Point((SCREEN_WIDTH / 2), 100);
-    final static Point THIER_SYSTEM_IMAGE_LOCATION = new Point((SCREEN_WIDTH / 2), kktextAreaLocation.y - 50);
+    final static Point OUR_SYSTEM_IMAGE_LOCATION = new Point((SCREEN_WIDTH / 2)-50, 80);
+    final static Point OUR_SYSTEM_LINE_POINT = new Point((SCREEN_WIDTH / 2), 160);
+    
+    final static Point THIER_SYSTEM_IMAGE_LOCATION = new Point((SCREEN_WIDTH / 2)-100, kktextAreaLocation.y -100);
+    final static Point THIER_SYSTEM_LINE_POINT = new Point((SCREEN_WIDTH / 2), kktextAreaLocation.y - 50);
 
     static boolean buttonIsPressed = false;
 
@@ -170,6 +173,7 @@ public class HackerDisplay
             {
 
                 (new HackerProgram(text, decryptButton, decryptionText)).start();
+               
             }
         });
 
@@ -178,15 +182,15 @@ public class HackerDisplay
 
     private static void setUpKodeKrack ()
     {
-        JPanel KkCenterPanel = new JPanel();
-        KkCenterPanel.setBackground(BACKGROUND_COLOR);
-        KkCenterPanel.setLayout(null);
+        JPanel kkCenterPanel = new JPanel();
+        kkCenterPanel.setBackground(BACKGROUND_COLOR);
+        kkCenterPanel.setLayout(null);
         JLabel kk = new JLabel("KodeKrack");
         kk.setFont(TITLE_TEXT_FONT);
         kk.setForeground(Color.RED);
         kk.setSize(kk.getPreferredSize());
         kk.setLocation(TITLE_LABEL_LOCATION_START_POINT.x - (kk.getWidth() / 2), TITLE_LABEL_LOCATION_START_POINT.y);
-        KkCenterPanel.add(kk);
+        kkCenterPanel.add(kk);
 
         JLabel passcodeLabel = new JLabel("Passcode:");
         passcodeLabel.setName("passcodeLabel");
@@ -194,7 +198,7 @@ public class HackerDisplay
         passcodeLabel.setForeground(Color.RED);
         passcodeLabel.setSize(passcodeLabel.getPreferredSize());
         passcodeLabel.setLocation(KK_PASSWORD_LABEL_LOCATION);
-        KkCenterPanel.add(passcodeLabel);
+        kkCenterPanel.add(passcodeLabel);
 
         JButton crackButton = new JButton("Hack");
         crackButton.setFont(TEXT_FONT);
@@ -203,7 +207,7 @@ public class HackerDisplay
         crackButton.setLocation(HACK_BUTTON_LOCATION);
         crackButton.setSize(crackButton.getPreferredSize());
         crackButton.setBorderPainted(false);
-        KkCenterPanel.add(crackButton);
+        kkCenterPanel.add(crackButton);
 
         JTextField kkText = new JTextField("enter me");
         kkText.setForeground(Color.GREEN);
@@ -211,11 +215,11 @@ public class HackerDisplay
         kkText.setLocation(kktextAreaLocation);
         kkText.setSize(300, 30);
         kkText.setBorder(BorderFactory.createLineBorder(BACKGROUND_COLOR));
-        KkCenterPanel.add(kkText);
+        kkCenterPanel.add(kkText);
 
         JFrame kKTopLevelFrame = new JFrame();
         kKTopLevelFrame.setSize(kKTopLevelFrame.getPreferredSize());
-        kKTopLevelFrame.setContentPane(KkCenterPanel);
+        kKTopLevelFrame.setContentPane(kkCenterPanel);
         kKTopLevelFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         kKTopLevelFrame.pack();
         kKTopLevelFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -227,20 +231,29 @@ public class HackerDisplay
         goToDecryptorButton.setLocation(TOGGLE_PROGRAM_BUTTON_LOCATION);
         goToDecryptorButton.setSize(goToDecryptorButton.getPreferredSize());
         goToDecryptorButton.setBorderPainted(false);
-        KkCenterPanel.add(goToDecryptorButton);
+        kkCenterPanel.add(goToDecryptorButton);
 
         ImagePanel firewall_1 = new ImagePanel("C:/Users/Sara Adamson/workspaceTA2420/Hacker/Resources/firewall.png");
         firewall_1.setLocation(FIREWALL_IMAGE_LOCATION_1);
-        KkCenterPanel.add(firewall_1);
+        kkCenterPanel.add(firewall_1);
 
         ImagePanel firewall_2 = new ImagePanel("C:/Users/Sara Adamson/workspaceTA2420/Hacker/Resources/firewall.png");
         firewall_2.setLocation(FIREWALL_IMAGE_LOCATION_2);
-        KkCenterPanel.add(firewall_2);
+        kkCenterPanel.add(firewall_2);
 
         ImagePanel firewall_3 = new ImagePanel("C:/Users/Sara Adamson/workspaceTA2420/Hacker/Resources/firewall.png");
         firewall_3.setLocation(FIREWALL_IMAGE_LOCATION_3);
-        KkCenterPanel.add(firewall_3);
-        KkCenterPanel.repaint();
+        kkCenterPanel.add(firewall_3);
+        
+        ImagePanel thier_system_image = new ImagePanel("C:/Users/Sara Adamson/workspaceTA2420/Hacker/Resources/smallDrone.png");
+        thier_system_image.setLocation(THIER_SYSTEM_IMAGE_LOCATION);
+        kkCenterPanel.add(thier_system_image);
+        
+        ImagePanel our_system_image = new ImagePanel("C:/Users/Sara Adamson/workspaceTA2420/Hacker/Resources/computerSmall.png");
+        our_system_image.setLocation(OUR_SYSTEM_IMAGE_LOCATION);
+        kkCenterPanel.add(our_system_image);
+        
+        kkCenterPanel.repaint();
 
         goToDecryptorButton.addActionListener(new ActionListener()
         {
@@ -251,18 +264,40 @@ public class HackerDisplay
             }
         });
 
-        KodeKrackProgram kkp = new KodeKrackProgram(KkCenterPanel, OUR_SYSTEM_IMAGE_LOCATION,
-                THIER_SYSTEM_IMAGE_LOCATION, FIREWALL_LINE_POINT_1, FIREWALL_LINE_POINT_1_THEM, FIREWALL_LINE_POINT_2,
+        kKTopLevelFrame.setVisible(true);
+        
+        KodeKrackProgram kkp = new KodeKrackProgram(kkText, kkCenterPanel, OUR_SYSTEM_LINE_POINT,
+                THIER_SYSTEM_LINE_POINT, FIREWALL_LINE_POINT_1, FIREWALL_LINE_POINT_1_THEM, FIREWALL_LINE_POINT_2,
                 FIREWALL_LINE_POINT_2_THEM, FIREWALL_LINE_POINT_3, FIREWALL_LINE_POINT_3_THEM);
 
         crackButton.addActionListener(new ActionListener()
         {
             public void actionPerformed (ActionEvent e)
             {
-                (kkp).start();
+//                (new KodeKrackProgram(kkText, kkCenterPanel, OUR_SYSTEM_LINE_POINT,
+//                        THIER_SYSTEM_LINE_POINT, FIREWALL_LINE_POINT_1, FIREWALL_LINE_POINT_1_THEM, FIREWALL_LINE_POINT_2,
+//                        FIREWALL_LINE_POINT_2_THEM, FIREWALL_LINE_POINT_3, FIREWALL_LINE_POINT_3_THEM)).start();
+                //kkp.run(kkCenterPanel,kkText.getText()); 
+                //for the next 20 seconds... repaint?
+                kkp.start();
+                
+                long timeToLoop = 1_000_000_000;
+                long timeToWait = 1_000_000;
+                long startTime = System.nanoTime();
+                while (System.nanoTime() - startTime < timeToLoop)
+                { 
+                    long startTime2 = System.nanoTime();
+                    while (System.nanoTime() - startTime2 < timeToWait)
+                    { // empty block
+                    }
+                    //System.out.println("hi!");
+                    
+                    kkCenterPanel.repaint();
+                }
+                System.out.println("hi!");
             }
         });
 
-        kKTopLevelFrame.setVisible(true);
+        
     }
 }
