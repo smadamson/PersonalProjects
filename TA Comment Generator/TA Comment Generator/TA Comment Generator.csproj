@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assignment2.cs">
+    <Compile Include="CommentGenerator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Assignment2.Designer.cs">
-      <DependentUpon>Assignment2.cs</DependentUpon>
+    <Compile Include="CommentGenerator.Designer.cs">
+      <DependentUpon>CommentGenerator.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Assignment2.resx">
-      <DependentUpon>Assignment2.cs</DependentUpon>
+    <EmbeddedResource Include="CommentGenerator.resx">
+      <DependentUpon>CommentGenerator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

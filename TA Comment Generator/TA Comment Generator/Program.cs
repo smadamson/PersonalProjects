@@ -16,7 +16,7 @@ namespace TA_Comment_Generator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Assignment2());
+            Application.Run(new CommentGenerator());
         }
     }
 }
