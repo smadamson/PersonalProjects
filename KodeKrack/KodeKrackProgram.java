@@ -1,30 +1,27 @@
-import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Point;
-import java.awt.Rectangle;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.Scanner;
-import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class KodeKrackProgram  extends Thread
+/**
+ * Create the Model for KodeKrack.
+ * 
+ * @author Sara Adamson
+ */
+public class KodeKrackProgram
 {
-    Point from_us, from_them, fireWall_1_us, fireWall_2_us, fireWall_3_us, fireWall_1_them, fireWall_2_them,
+    private Point from_us, from_them, fireWall_1_us, fireWall_2_us, fireWall_3_us, fireWall_1_them, fireWall_2_them,
             fireWall_3_them;
-    JPanel mainPanel;
-    Line line1_us, line2_us, line3_us, line1_them, line2_them, line3_them;
-    String password;
 
-    HashSet<String> possiblePasswords;
+    private HashSet<String> possiblePasswords_station1, possiblePasswords_station2, possiblePasswords_station3;
 
-    static int count = 0;
+    private Color GOOD_COLOR = Color.GREEN;
+    private Color BAD_COLOR = Color.RED;
 
     public KodeKrackProgram (JTextField text, JPanel mainPanel, Point from_us, Point from_them, Point fireWall_1_us,
             Point fireWall_1_them, Point fireWall_2_us, Point fireWall_2_them, Point fireWall_3_us,
@@ -38,156 +35,151 @@ public class KodeKrackProgram  extends Thread
         this.fireWall_1_them = fireWall_1_them;
         this.fireWall_2_them = fireWall_2_them;
         this.fireWall_3_them = fireWall_3_them;
-        // this.mainPanel = mainPanel;
-        // password = text.getText().trim();
+        
         // Create a list of the possible passwords.
-        possiblePasswords = new HashSet<>();
-        populatePasswords("C:/Users/Sara Adamson/workspaceTA2420/Hacker/Resources/passwords.txt");
-
-        // create the lines.
-        line1_us = new Line(from_us, fireWall_1_us);
-         line2_us = new Line(from_us, fireWall_2_us);
-         line3_us = new Line(from_us, fireWall_3_us);
-         line1_them = new Line(from_them, fireWall_1_them);
-         line2_them = new Line(from_them, fireWall_2_them);
-         line3_them = new Line(from_them, fireWall_3_them);
-
+        possiblePasswords_station1 = new HashSet<>();
+        possiblePasswords_station2 = new HashSet<>();
+        possiblePasswords_station3 = new HashSet<>();
+        populatePasswords("/Resources/passwords.txt");
     }
 
-    public void run(){
-        subRun(mainPanel, password);
-    }
-    public void subRun (JPanel mainPanel, String password)
+    /**
+     * Determines if the password is correct and if it is, draws lines on the screen accordingly.
+     * 
+     * @param mainPanel Panel to draw on.
+     * @param password Password to validate. 
+     * @return the number of correct passwords.
+     */
+    public int validatePassword (JPanel mainPanel, String password, int count_correct)
     {
-
-        // add the lines when the password is entered.
-        if (possiblePasswords.contains(password))
+        // draw a line from us to them.
+        switch (password.charAt(0)) // first character is station number.
         {
-            if (count == 0)
-            {
-                count++;
-                drawSlowly(from_us, fireWall_1_us, mainPanel);
-//                long timeBetween = 10_000; // wait a bit
-//                long startTime;
-//                Line l;
-//
-//                int numerator = 1;
-//                int denom = 2;
-//                double fraction = numerator/denom;
-//                
-//                // change values in l, and add them to main, and repaint incrementally.
-//                Point tempTo;
-//                
-//                //To find the points on the line I need to use point slope formula. 
-//                Double slope = (fireWall_1_us.getY()-from_us.getY())/(fireWall_1_us.getX() - from_us.getX()); //The slope between these two lines. 
-//                
-//                //I will use incremental values of y (top down) and compute the values of x. 
-//                Double tempY = from_us.getY(); //top y value. 
-//                
-//                //find the x value associated with this y value using point slope. 
-//                Double tempX;
-//                
-//                while (true) // stop when we've added the entire line.
-//                {
-//                    tempX = (tempY - from_us.y + slope*from_us.x)/slope;
-//                    
-//                    tempTo = new Point((int)(1 * tempX), (int)(1 * tempY));
-//                    
-//                    l = new Line(from_us, tempTo);
-//
-//                    mainPanel.add(l);
-//                    mainPanel.repaint();
-//                    
-//                    tempY++;
-//                    if (tempTo.equals(fireWall_1_us))
-//                    {
-//                        break;
-//                    }
-//
-//                    startTime = System.nanoTime();
-//                    while (System.nanoTime() - startTime < timeBetween)
-//                    { 
-//                        // empty block
-//                    }
-//                }
-                //mainPanel.add(line1_us);
-                 //mainPanel.add(line1_them);
-                mainPanel.repaint();
+            case '1':
+                mainPanel.add(new Line(from_us, fireWall_1_us, GOOD_COLOR));
 
-                // remove the password
-                possiblePasswords.remove(password);
-            }
-            else if (count == 1)
-            {
-                // System.out.println("you got one!");
-                mainPanel.add(line2_us);
-                mainPanel.add(line2_them);
-                count++;
-                mainPanel.repaint();
+                if (possiblePasswords_station1.contains(password))
+                {
+                    mainPanel.add(new Line(from_them, fireWall_1_them, GOOD_COLOR));
+                    count_correct++;
+                }
+                else
+                {
+                    mainPanel.add(new Line(from_them, fireWall_1_them, BAD_COLOR));
+                }
+                break;
+            case '2':
+                mainPanel.add(new Line(from_us, fireWall_2_us, GOOD_COLOR));
 
-                // remove the password
-                possiblePasswords.remove(password);
-            }
-            else if (count == 2)
-            {
-                // System.out.println("you got them all!");
-                mainPanel.add(line3_us);
-                mainPanel.add(line3_them);
-                count++;
-                mainPanel.repaint();
-                // remove the password
-                possiblePasswords.remove(password);
-            }
+                if (possiblePasswords_station2.contains(password))
+                {
+                    mainPanel.add(new Line(from_them, fireWall_2_them, GOOD_COLOR));
+                    count_correct++;
+                }
+                else
+                {
+                    mainPanel.add(new Line(from_them, fireWall_2_them, BAD_COLOR));
+                }
+                break;
+            case '3':
+                mainPanel.add(new Line(from_us, fireWall_3_us, GOOD_COLOR));
+                if (possiblePasswords_station3.contains(password))
+                {
+                    mainPanel.add(new Line(from_them, fireWall_3_them, GOOD_COLOR));
+                    count_correct++;
+                }
+                else
+                {
+                    mainPanel.add(new Line(from_them, fireWall_3_them, BAD_COLOR));
+                }
+                break;
+        }
+        mainPanel.repaint();
 
+        return count_correct;
+    }
+
+    /**
+     * Determines if the password is correct and if it is, draws lines on the screen accordingly
+     * 
+     * @param mainPanel
+     * @param password
+     * @return the number of correct passwords.
+     */
+    private boolean validate_password (String password)
+    {
+        // draw a line from us to them.
+        switch (password.charAt(0)) // first character is station number.
+        {
+            case '1':
+                if (possiblePasswords_station1.contains(password))
+                {
+                    return true;
+                }
+                break;
+            case '2':
+                if (possiblePasswords_station2.contains(password))
+                {
+                    return true;
+                }
+                break;
+            case '3':
+                if (possiblePasswords_station3.contains(password))
+                {
+                    return true;
+                }
+                break;
         }
 
-        // draw a line from point "from" to point "to".
-        // System.out.println("That was wrong" + count);
+        return false;
     }
 
+    /** 
+     * Slowly draws a line from point from to point to on the given JPanel 
+     * I couldn't get this to work... how sad.
+     */
     private void drawSlowly (Point from, Point to, JPanel main)
     {
-        long timeBetween = 10_000; // wait a bit
+        long timeBetween = 100_000_000; // wait a bit
         long startTime;
         Line l;
 
-        int numerator = 1;
-        int denom = 2;
-        double fraction = numerator/denom;
-        
         // change values in l, and add them to main, and repaint incrementally.
         Point tempTo;
-        
-        //To find the points on the line I need to use point slope formula. 
-        Double slope = (to.getY()-from.getY())/(to.getX() - from.getX()); //The slope between these two lines. 
-        
-        //I will use incremental values of y (top down) and compute the values of x. 
-        Double tempY = from.getY(); //top y value. 
-        
-        //find the x value associated with this y value using point slope. 
+
+        // To find the points on the line I need to use point slope formula.
+        Double slope = (to.getY() - from.getY()) / (to.getX() - from.getX()); // The slope between these two lines.
+
+        // I will use incremental values of y (top down) and compute the values of x.
+        Double tempY = from.getY(); // top y value.
+
+        // find the x value associated with this y value using point slope.
         Double tempX;
-        
-        while (true) // stop when we've added the entire line.
+
+        int it = 0;
+        while (it < 11) // stop when we've added the entire line.
         {
-            tempX = (tempY - from.y + slope*from.x)/slope;
-            
-            tempTo = new Point((int)(1 * tempX), (int)(1 * tempY));
-            l = new Line(from, tempTo);
+            tempX = (tempY - from.y + slope * from.x) / slope;
+
+            tempTo = new Point((int) (1 * tempX), (int) (1 * tempY));
+            l = new Line(from, tempTo, GOOD_COLOR);
 
             main.add(l);
             main.repaint();
             
             tempY++;
-            if (tempTo.equals(to))
+
+            if (tempTo.y > to.y)
             {
                 break;
             }
 
             startTime = System.nanoTime();
             while (System.nanoTime() - startTime < timeBetween)
-            { 
-                // empty block
+            {
+                // the waiting game... joy.
             }
+            it++;
         }
     }
 
@@ -196,51 +188,50 @@ public class KodeKrackProgram  extends Thread
      */
     private void populatePasswords (String fileName)
     {
-        Scanner s;
-        try (BufferedReader reader = new BufferedReader(new FileReader(fileName)))
+        try
         {
-            s = new Scanner(reader);
+            // Use the file from a .jar and process it.
+            InputStream in = getClass().getResourceAsStream(fileName);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+            Scanner s = new Scanner(reader);
 
-            while (s.hasNext())
+            while (s.hasNextLine())
             {
+                String str = s.nextLine();
+                if (str.isEmpty()) // part of next set
+                {
+                    break;
+                }
                 // add each line to the possiblePasswords.
-                possiblePasswords.add(s.nextLine().trim());
+                possiblePasswords_station1.add(str.trim());
             }
 
+            while (s.hasNextLine())
+            {
+                String str = s.nextLine();
+                if (str.isEmpty()) // part of next set
+                {
+                    break;
+                }
+                // add each line to the possiblePasswords.
+                possiblePasswords_station2.add(str.trim());
+            }
+
+            while (s.hasNextLine())
+            {
+                String str = s.nextLine();
+                if (str.isEmpty()) // part of next set
+                {
+                    break;
+                }
+                // add each line to the possiblePasswords.
+                possiblePasswords_station3.add(str.trim());
+            }
+            s.close();
         }
         catch (Exception e)
         {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
-    }
-}
-
-class Line extends JComponent
-{
-    Point from, to;
-
-    public Line (Point from, Point to)
-    {
-        this.setSize(1000, 1000);
-        this.setName("line");
-
-        this.setForeground(Color.GREEN);
-
-        this.from = from;
-        //System.out.print("Correct: (" + from.x + ", " + from.y + ")");
-        this.to = to;
-        //System.out.println("(" + to.x + ", " + to.y + ")");
-    }
-
-    @Override
-    public void paintComponent (Graphics g)
-    {
-        super.paintComponent(g);
-        Graphics2D g2d = (Graphics2D) g.create();
-        g2d.setStroke(new BasicStroke(5));
-        g2d.drawLine(from.x, from.y, to.x, to.y);
-        System.out.println("drawing");
-
-        g2d.dispose();
     }
 }

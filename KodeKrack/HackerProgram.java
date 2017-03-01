@@ -1,62 +1,54 @@
-import javax.swing.JButton;
 import javax.swing.JTextField;
 
+/**
+ * Creates the model behind Decryptor. Decrypts the value in the text field and aside from some eye candy, places the
+ * decrypted value in the given text area.
+ * 
+ * @author Sara Adamson
+ */
 public class HackerProgram extends Thread
 {
-    Decryption dc;
-    JTextField txt;
-    JButton decpt;
-    //String text;
-    JTextField textBox;
-    public HackerProgram ()
+    private JTextField placeForDecryptedValue;
+    private JTextField valueToDecrypt;
+
+    public HackerProgram (JTextField valueToDecrypt, JTextField placeForDecryptedValue)
     {
-    
-    }
-    public HackerProgram (JTextField text, JButton decrypt, JTextField decryptionText)
-    {
-        dc = new Decryption();
-        txt = decryptionText;
-        decpt = decrypt;
-        //text = dText;
+        this.placeForDecryptedValue = placeForDecryptedValue;
+        this.valueToDecrypt = valueToDecrypt;
     }
 
     public void run ()
     {
         String[] loading = { ".", ".", ".", "d", "e", "c", "r", "y", "p", "t", "i", "n", "g", ".", ".", ".", ".", "." };
-        String value = dc.getDecryptedValue(txt.getText());
-        // long startTime = System.currentTimeMillis();
+        String value = Decryption.getDecryptedValue(valueToDecrypt.getText());
+
         long timeBetween = 100_000_000; // wait one second
         int index = 0;
-        String loadingStr = "";
         int count = 0;
         while (count < 5)
         {
-            //System.out.println("waiting");
+            // for eye candy, wait a bit between displaying the elements in the 'decrypting' message to the user.
             long startTime = System.nanoTime();
-            //long currentTime = System.currentTimeMillis();
-            // wait some time.
             while (System.nanoTime() - startTime < timeBetween)
-            { // empty block
+            {
             }
 
+            // display the 'decrypting' message.  
             if (index < loading.length)
             {
-                //loadingStr += loading[index];
-                System.out.print(loading[index]);
-                txt.setText(txt.getText() + loading[index]);
+                placeForDecryptedValue.setText(placeForDecryptedValue.getText() + loading[index]);
             }
-            else if(index == loading.length)
+            // clear the remnants of the 'decrypting' message
+            else if (index == loading.length)
             {
                 count++;
-                System.out.println("");
                 index = -1;
-                txt.setText("");
-                //break;
+                placeForDecryptedValue.setText("");
             }
             index++;
         }
-        System.out.println("");
-        System.out.println(value);
-        txt.setText(value);
+        
+        // Display the decrypted value to the user. 
+        placeForDecryptedValue.setText(value);
     }
 }

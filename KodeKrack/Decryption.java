@@ -1,16 +1,12 @@
 import java.math.BigInteger;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 public class Decryption
 {
-    public Decryption ()
-    {
-    }
     /**
-     * @return returns the decrypted value of input integer.  
+     * @return returns the decrypted value of input string.  
      */
-    public String getDecryptedValue(String value_to_decrypt)
+    public static String getDecryptedValue(String value_to_decrypt)
     {
         MessageDigest md;
         String hashtext = "";
