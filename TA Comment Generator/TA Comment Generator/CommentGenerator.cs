@@ -23,8 +23,8 @@ namespace TA_Comment_Generator
         //A few special comments
         String startEarlyNextTime, wellDone;
         //TODO: Change me!
-        String percent_Of_Grade_Analysis_Doc_Is_Worth = "60%";
-
+        String percent_Of_Grade_Analysis_Doc_Is_Worth = "20%";
+        String disclaimer = "";//"Disclaimer: I understand that students work very hard on their assignments and the following comments may seem a bit harsh. These comments are not meant to hurt feelings or to be mean. As a TA I do my best to ensure that you get good and thorough feedback so that you can keep pushing towards becoming a better computer scientist. :)";
         public CommentGenerator()
         {
             InitializeComponent();
@@ -187,7 +187,7 @@ namespace TA_Comment_Generator
             comments.Add("Your analysis document looks good. There is a good explanation of the graph and you also include axis titles which is nice. You further demonstrate a good understanding of the complexity involved in the program.");
 
             textFieldsArr.Add("Analysis needs improvement");
-            comments.Add("In an analysis document try to analyze the algorithms in the code and explain their big-O complexity. For example, you might say that the jiggler function is O(n) (where n represents the number of circles) because it loops through every circle once and jiggles it. Also, your analysis document should include several graphs with descriptive titles and labeled axis.");
+            comments.Add("Your analysis document needs improvement. In an analysis document try to analyze the algorithms in the code and explain their big-O complexity. Also, a superior analysis document should include several graphs with descriptive titles and labeled axis.");
 
             textFieldsArr.Add("No analysis");
             comments.Add("You forgot to include your analysis document. Remember that the written portion of this assignment is worth " + percent_Of_Grade_Analysis_Doc_Is_Worth + " of your grade. It is very important that you demonstrate an understanding of your work.");
@@ -213,6 +213,9 @@ namespace TA_Comment_Generator
             textFieldsArr.Add("Partner carried the team");
             comments.Add("It seems like your partner did a lot of the work on this assignment. Be sure that when you work the a partner you are practicing the techniques of pair programing. This means sitting at the same computer. It may seem frustrating now but it will help you improve your skills.");
 
+            textFieldsArr.Add("Not working with a partner");
+            comments.Add("This was a partner assignment and without special permission from professor Germain you are expected to work in pairs. Working in groups is an important part of becoming a good computer science student. Please find a partner for the next assignment.");
+
             //Testing
             textFieldsArr.Add("No Tests");
             comments.Add("No tests were included on this assignment. As a developer testing is very important because it helps ensure your code is working as expected. Please be sure to include tests for your public methods and classes.");
@@ -221,35 +224,27 @@ namespace TA_Comment_Generator
             comments.Add("The tests for this assignment were insufficient. The testing requirement for assignments is meant to help you ensure your code is behaving as expected. Please test each public class and method thoroughly and include those tests when you turn in your assignment.");
 
             textFieldsArr.Add("Good Tests");
-            comments.Add("Well done creating tests for your classes. I'm sure this saved you a lot of time debugging.");
+            comments.Add("Well done creating tests for your classes! :) I'm sure this saved you a lot of time debugging.");
 
             //AssignmentSpecifics
             textFieldsArr.Add("Graphs with multiple lines");
-            comments.Add("The graphs in your analysis contain multiple lines where each line represents a different sort. This is OK sometimes but only when the graphs scale together nicely. In this case it is not OK because the scale of the graphs makes it impossible to see how the sorts are behaving.");
+            comments.Add("The graphs in your analysis contain multiple lines where each line represents a different list. This is OK sometimes but only when the graphs scale together nicely. In this case it is not OK because the scale of the graphs makes it impossible to see how the lists are behaving.");
 
             textFieldsArr.Add("Not properly analyzing complexity");
-            comments.Add("In the analysis, you make some claims about the complexity of the sorts i.e. that insertion sort has O(n^2) but you don't explain why. You could have said something like \"insertion sort is O(n ^ 2) because it must iterate through every element once and for each element it must compare it to every other element. This results in a nested loop which means we run through N elements N times resulting in O(n ^ 2) complexity\".") ;
+            comments.Add("In the analysis, you make some claims about the complexity of the lists but you don't explain why.");
 
             textFieldsArr.Add("Describe your graphs");
-            comments.Add("The analysis should include a thorough analysis and explanation of each graph. This doesn't need to be long it could be something like: \" The graph above is a plot running insertion sort on an array of length N."
-                + "As you can see the time increase is quadratic which is expected because insertion sort is O(n^2). The graph models this complexity nicely.\" Because we have already evaluated insertion sort you don't need to explain why insertion sort is O(n^2) but if this were a new sort you could add a sentence or two explaining why the complexity is O(nlogn), for example.");
+            comments.Add("The analysis should include a thorough analysis and explanation of each graph.");
 
             textFieldsArr.Add("Graphs don't make sense");
-            comments.Add("I can't understand what your graphs are showing. Please include graphs with legends, labeled axis, and one solid line which clearly depicts one sort function.");
+            comments.Add("I can't understand what your graphs are showing. Please include graphs with legends, labeled axis, and one solid line which clearly depicts one function.");
+            
+            textFieldsArr.Add("There are some graphs missing");
+            comments.Add("There are a few graphs missing in the analysis. There should have been a graph for insertion, a graph for merge, shell, and all 4 types of quick sort. There also ");
 
-            textFieldsArr.Add("");
-            comments.Add("");
-
-            textFieldsArr.Add("");
-            comments.Add("");
-
-            textFieldsArr.Add("MergeSort bad");
-            comments.Add("It appears there is an error in the merge sort algorithm, some of our tests failed. Be sure your tests are very thorough in the future so that you can avoid this.");
-
-            textFieldsArr.Add("QuickSort bad");
-            comments.Add("It appears there is an error in the quick sort algorithm, some of our tests failed. Be sure your tests are very thorough in the future so that you can avoid this.");
-
-        }
+            textFieldsArr.Add("Missing pictures");
+            comments.Add("You’re missing your picture representations for the methods. ");
+            }
 
         /**
          * Generates the comment and displays it in the comment text box to the user. 
@@ -257,8 +252,7 @@ namespace TA_Comment_Generator
         private void generate_comment_Click(object sender, EventArgs e)
         {
             //Create the comment to be generated. 
-
-            string comment = "";
+            string comment = "";// disclaimer + "\n\n";
             int i = 0;
             foreach (string com in comments)
             {
