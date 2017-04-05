@@ -23,7 +23,7 @@ namespace TA_Comment_Generator
         //A few special comments
         String startEarlyNextTime, wellDone;
         //TODO: Change me!
-        String percent_Of_Grade_Analysis_Doc_Is_Worth = "20%";
+        String percent_Of_Grade_Analysis_Doc_Is_Worth = "30%";
         String disclaimer = "";//"Disclaimer: I understand that students work very hard on their assignments and the following comments may seem a bit harsh. These comments are not meant to hurt feelings or to be mean. As a TA I do my best to ensure that you get good and thorough feedback so that you can keep pushing towards becoming a better computer scientist. :)";
         public CommentGenerator()
         {
@@ -228,7 +228,7 @@ namespace TA_Comment_Generator
 
             //AssignmentSpecifics
             textFieldsArr.Add("Graphs with multiple lines");
-            comments.Add("The graphs in your analysis contain multiple lines where each line represents a different list. This is OK sometimes but only when the graphs scale together nicely. In this case it is not OK because the scale of the graphs makes it impossible to see how the lists are behaving.");
+            comments.Add("The graphs in your analysis contain multiple lines where each line represents a different tree. This is OK sometimes but only when the graphs scale together nicely. In this case it is not OK because the scale of the graphs makes it impossible to see how the lists are behaving.");
 
             textFieldsArr.Add("Not properly analyzing complexity");
             comments.Add("In the analysis, you make some claims about the complexity of the lists but you don't explain why.");
@@ -238,13 +238,13 @@ namespace TA_Comment_Generator
 
             textFieldsArr.Add("Graphs don't make sense");
             comments.Add("I can't understand what your graphs are showing. Please include graphs with legends, labeled axis, and one solid line which clearly depicts one function.");
-            
-            textFieldsArr.Add("There are some graphs missing");
-            comments.Add("There are a few graphs missing in the analysis. There should have been a graph for insertion, a graph for merge, shell, and all 4 types of quick sort. There also ");
 
-            textFieldsArr.Add("Missing pictures");
-            comments.Add("You’re missing your picture representations for the methods. ");
-            }
+            textFieldsArr.Add("7 cards unimplemented");
+            comments.Add("The methods for a 7 card hand are unimplemented. ");
+
+            textFieldsArr.Add("No connection between stochastic and life");
+            comments.Add("It's important to note for your analysis that one of the main take aways from this assignment is that some time approximations are good enough. The stochastic model of the odds was fairly close to the exhaustive results, but the exhaustive results might take forever to generate for large N. In most real life situations the stochastic model would be good enough.");
+        }
 
         /**
          * Generates the comment and displays it in the comment text box to the user. 
