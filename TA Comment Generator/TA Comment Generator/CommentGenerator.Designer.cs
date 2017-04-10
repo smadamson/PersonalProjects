@@ -420,7 +420,7 @@ namespace TA_Comment_Generator
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 114);
+            this.label9.Location = new System.Drawing.Point(3, 136);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(107, 13);
             this.label9.TabIndex = 31;
@@ -509,7 +509,7 @@ namespace TA_Comment_Generator
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 41);
+            this.label8.Location = new System.Drawing.Point(3, 61);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(42, 13);
             this.label8.TabIndex = 30;
@@ -518,7 +518,7 @@ namespace TA_Comment_Generator
             // checkBox21
             // 
             this.checkBox21.AutoSize = true;
-            this.checkBox21.Location = new System.Drawing.Point(6, 57);
+            this.checkBox21.Location = new System.Drawing.Point(6, 41);
             this.checkBox21.Name = "checkBox21";
             this.checkBox21.Size = new System.Drawing.Size(15, 14);
             this.checkBox21.TabIndex = 23;
@@ -554,7 +554,7 @@ namespace TA_Comment_Generator
             // checkBox24
             // 
             this.checkBox24.AutoSize = true;
-            this.checkBox24.Location = new System.Drawing.Point(6, 133);
+            this.checkBox24.Location = new System.Drawing.Point(6, 116);
             this.checkBox24.Name = "checkBox24";
             this.checkBox24.Size = new System.Drawing.Size(15, 14);
             this.checkBox24.TabIndex = 2;
@@ -786,12 +786,12 @@ namespace TA_Comment_Generator
         private Label label5;
         private Label label4;
         private Label label3;
-        private CheckBox checkBox42;
         private CheckBox checkBox41;
         private CheckBox checkBox40;
         private CheckBox checkBox39;
         private Button NewComment;
         private Label Help;
+        private CheckBox checkBox42;
     }
 }
 
