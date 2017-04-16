@@ -243,7 +243,7 @@ namespace TA_Comment_Generator
             comments.Add("The methods for a 7 card hand are unimplemented. ");
 
             textFieldsArr.Add("No connection between stochastic and life");
-            comments.Add("It's important to note for your analysis that one of the main take aways from this assignment is that some time approximations are good enough. The stochastic model of the odds was fairly close to the exhaustive results, but the exhaustive results might take forever to generate for large N. In most real life situations the stochastic model would be good enough.");
+            comments.Add("It's important to note for your analysis that one of the main take-aways from this assignment is that sometimes approximations are good enough. The stochastic model of the odds was fairly close to the exhaustive results, but the exhaustive results might take forever to generate for large N. In most real-life situations, the stochastic model would be good enough.");
         }
 
         /**
