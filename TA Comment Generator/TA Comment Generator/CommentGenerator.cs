@@ -26,7 +26,7 @@ namespace TA_Comment_Generator
         //A few special comments
         String startEarlyNextTime, wellDone;
         //TODO: Change me!
-        String percent_Of_Grade_Analysis_Doc_Is_Worth = "50%";
+        String percent_Of_Grade_Analysis_Doc_Is_Worth = "40%";
         String disclaimer = "";//"Disclaimer: I understand that students work very hard on their assignments and the following comments may seem a bit harsh. These comments are not meant to hurt feelings or to be mean. As a TA I do my best to ensure that you get good and thorough feedback so that you can keep pushing towards becoming a better computer scientist. :)";
         public CommentGenerator()
         {
