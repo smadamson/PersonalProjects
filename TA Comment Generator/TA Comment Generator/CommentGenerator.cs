@@ -20,10 +20,13 @@ namespace TA_Comment_Generator
         //String[] textFields;
         List<String> textFieldsArr = new List<String>();
 
+        //Final message for all grading comments. 
+        String endingMessage = "Please send me a message on canvas or the issue tracker if you have any questions about grading";
+
         //A few special comments
         String startEarlyNextTime, wellDone;
         //TODO: Change me!
-        String percent_Of_Grade_Analysis_Doc_Is_Worth = "40%";
+        String percent_Of_Grade_Analysis_Doc_Is_Worth = "50%";
         String disclaimer = "";//"Disclaimer: I understand that students work very hard on their assignments and the following comments may seem a bit harsh. These comments are not meant to hurt feelings or to be mean. As a TA I do my best to ensure that you get good and thorough feedback so that you can keep pushing towards becoming a better computer scientist. :)";
         public CommentGenerator()
         {
@@ -221,29 +224,29 @@ namespace TA_Comment_Generator
             comments.Add("No tests were included on this assignment. As a developer testing is very important because it helps ensure your code is working as expected. Please be sure to include tests for your public methods and classes.");
 
             textFieldsArr.Add("Bad Tests");
-            comments.Add("The tests for this assignment were insufficient. The testing requirement for assignments is meant to help you ensure your code is behaving as expected. Please test each public class and method thoroughly and include those tests when you turn in your assignment.");
+            comments.Add("The sparsity of your tests indicates you did not follow the \"test-first\" methodology. Please remember that you can write tests before you write an implementation, as long as you understand the \"contract\" for the methods. Additionally, tests of specific \"tricky\" methods, can rapidly help you find and fix errors!");
 
             textFieldsArr.Add("Good Tests");
             comments.Add("Well done creating tests for your classes! :) I'm sure this saved you a lot of time debugging.");
 
             //AssignmentSpecifics
             textFieldsArr.Add("Graphs with multiple lines");
-            comments.Add("The graphs in your analysis contain multiple lines where each line represents a different tree. This is OK sometimes but only when the graphs scale together nicely. In this case it is not OK because the scale of the graphs makes it impossible to see how the lists are behaving.");
+            comments.Add("The graphs in your analysis contain multiple lines where each line represents something different. This is OK sometimes but only when the graphs scale together nicely. In this case it is not OK because the scale of the graphs makes it impossible to see how things are behaving individually.");
 
             textFieldsArr.Add("Not properly analyzing complexity");
-            comments.Add("In the analysis, you make some claims about the complexity of the lists but you don't explain why.");
+            comments.Add("In the analysis, you make some claims about complexity but you don't explain why the complexity is what it is.");
 
             textFieldsArr.Add("Describe your graphs");
             comments.Add("The analysis should include a thorough analysis and explanation of each graph.");
 
-            textFieldsArr.Add("Graphs don't make sense");
-            comments.Add("I can't understand what your graphs are showing. Please include graphs with legends, labeled axis, and one solid line which clearly depicts one function.");
+            textFieldsArr.Add("");
+            comments.Add("");
 
-            textFieldsArr.Add("7 cards unimplemented");
-            comments.Add("The methods for a 7 card hand are unimplemented. ");
+            textFieldsArr.Add("");
+            comments.Add("");
 
-            textFieldsArr.Add("No connection between stochastic and life");
-            comments.Add("It's important to note for your analysis that one of the main take-aways from this assignment is that sometimes approximations are good enough. The stochastic model of the odds was fairly close to the exhaustive results, but the exhaustive results might take forever to generate for large N. In most real-life situations, the stochastic model would be good enough.");
+            textFieldsArr.Add("");
+            comments.Add("");
         }
 
         /**
@@ -274,7 +277,7 @@ namespace TA_Comment_Generator
                 comment += wellDone + "\n";
 
 
-            comment += "Please come see me in office hours if you have any questions about grading."; //An ending message. 
+            comment += endingMessage; //An ending message. 
             this.commentTxtBox.Text = comment;
         }
 
