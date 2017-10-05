@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommentGenerator.cs">
+    <Compile Include="CommentGeneratorGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CommentGenerator.Designer.cs">
-      <DependentUpon>CommentGenerator.cs</DependentUpon>
+    <Compile Include="CommentGeneratorGUI.Designer.cs">
+      <DependentUpon>CommentGeneratorGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CommentGenerator.resx">
-      <DependentUpon>CommentGenerator.cs</DependentUpon>
+    <EmbeddedResource Include="CommentGeneratorGUI.resx">
+      <DependentUpon>CommentGeneratorGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

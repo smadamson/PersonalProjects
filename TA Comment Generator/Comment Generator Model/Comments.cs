@@ -93,5 +93,14 @@ namespace Comment_Generator_Model
         {
            return DisplayValToFullComment.Remove(display);
         }
+
+        /// <summary>
+        /// Returns the hidden comment associated with the given display value. 
+        /// If the comment does not exists, throws and exception?
+        /// </summary>
+        public string Get (string display)
+        {
+            return DisplayValToFullComment[display];
+        }
     }
     }
