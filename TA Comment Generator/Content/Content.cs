@@ -39,6 +39,8 @@ namespace GeneratorUtils
         /// <param name="writer"></param>
         public abstract void WriteComponentsXml(XmlWriter writer);
 
+        public abstract void ReadComponentsXml(XmlReader reader);
+
         /// <summary>
         /// Adds this element to the content collection.
         /// </summary>

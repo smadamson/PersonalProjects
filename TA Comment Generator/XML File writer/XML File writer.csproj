@@ -40,13 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="XMLWriter.cs" />
+    <Compile Include="XMLHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Content\Content.csproj">
-      <Project>{6a214864-2445-4f5b-b1bc-c55ea9a13191}</Project>
-      <Name>Content</Name>
+    <ProjectReference Include="..\Comment Generator Model\Comment Generator Model.csproj">
+      <Project>{4aad7258-7b1a-47af-96a2-c374df6e50ce}</Project>
+      <Name>Comment Generator Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

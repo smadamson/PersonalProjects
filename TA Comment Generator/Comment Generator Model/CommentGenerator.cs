@@ -1,18 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Comment_Generator_Model
 {
-    class CommentGenerator
+    public class CommentGenerator
     {
-        Comments comments;
+        private Comments comments;
+        private static string VERSION = "1.0";
+
+        /// <summary>
+        /// The number of comments in this CommentGenerator.
+        /// </summary>
+        public int Count
+        {
+            get { return comments.Count; }
+        }
+
 
         public CommentGenerator()
         {
-            comments = new Comments(new Dictionary<string, string>(), "1.0");
+            comments = new Comments();
         }
 
         public bool AddComment(string display, string hidden)
@@ -41,6 +53,11 @@ namespace Comment_Generator_Model
             }
         }
 
+        public static IEnumerable<KeyValuePair<string, string>> getAllComments()
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Returns the hidden comment associated with the display value. 
         /// If it does not exist, an exception is throw?
@@ -49,5 +66,56 @@ namespace Comment_Generator_Model
         {
             return comments.Get(display);
         }
+
+        /// <summary>
+        /// Writes the state of this CommentGenerator to and Xml File. 
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <param name="content"></param>
+        public void WriteXml(string filePath, CommentGenerator content)
+        {
+            string fileName = Path.GetFileName(filePath);
+            // We want some non-default settings for our XML writer.
+            // Specifically, use indentation to make it more readable.
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.IndentChars = ("  ");
+
+            // Create an XmlWriter inside this block, and automatically Dispose() it at the end.
+            try
+            {
+                using (XmlWriter writer = XmlWriter.Create(filePath, settings))
+                {
+                    writer.WriteStartDocument();
+                    writer.WriteStartElement("CommentGenerator"); //<First>
+                    writer.WriteAttributeString("version", VERSION);
+
+                    comments.WriteAllcommentsXml(writer);
+
+                    //writer.WriteEndAttribute(); // Ends the spreadsheet block TODO: will this say </spreadsheet> ?
+                    writer.WriteEndDocument();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        /// <summary>
+        /// Reads an Xml file and returns a new CommentGenerator containing the 
+        /// appropriate state. 
+        /// </summary>
+        /// <param name="filePath"></param>
+        public CommentGenerator ReadXml(string filePath)
+        {
+            CommentGenerator ret = new CommentGenerator();
+            using (XmlReader reader = XmlReader.Create(filePath))
+            {
+                ret.comments = comments.ReadCommentsXml(reader);
+                return ret;
+            }
+        }
+
     }
 }
