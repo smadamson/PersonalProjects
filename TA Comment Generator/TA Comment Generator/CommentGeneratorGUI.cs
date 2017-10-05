@@ -16,8 +16,9 @@ namespace TA_Comment_Generator
         String special_order_comments;
         String percent_Of_Grade_Analysis_Doc_Is_Worth = "30%";
         CommentGenerator cg;
+        int boxOrder = 0;
 
-        CheckBox[] checkBoxes;
+        List<CheckBox> checkBoxes;
 
 
         //file extension for a spreadsheet
@@ -41,24 +42,34 @@ namespace TA_Comment_Generator
         /// </summary>
         private void UpdateDisplay()
         {
-            checkBoxes = new CheckBox[cg.Count];
+            checkBoxes = new List<CheckBox>();
 
             int height = 1;
             int padding = 10;
 
             int i = 0;
-            foreach(KeyValuePair<string, string> comment in CommentGenerator.getAllComments())
+            foreach(string display in cg.getAllCommentDisplays())
             {
-                checkBoxes[i] = new CheckBox();
-                checkBoxes[i].Name = i.ToString();
-                checkBoxes[i].Text = comment.Key;
-                checkBoxes[i].TabIndex = i;
-                checkBoxes[i].AutoCheck = true;
-                checkBoxes[i].Bounds = new Rectangle(10, 20 + padding + height, 40, 22);
-                checkBoxPanel.Controls.Add(checkBoxes[i]);
+                CheckBox ckb = createCheckBox(display, display, height, padding, i);
+                checkBoxPanel.Controls.Add(ckb);
                 height += 22;
                 i++;
             }
+        }
+
+        /// <summary>
+        /// Creates a checkbox with the given properties. 
+        /// </summary>
+        /// <returns></returns>
+        private CheckBox createCheckBox(string Name, string Text, int height, int padding, int tabIndex)
+        {
+            CheckBox ckb = new CheckBox();
+            ckb.Name = Name;
+            ckb.Text = Text;
+            ckb.TabIndex = tabIndex;
+            ckb.AutoCheck = true;
+            ckb.Bounds = new Rectangle(10, 20 + padding + height, 40, 22);
+            return ckb;
         }
 
         /*
@@ -113,6 +124,7 @@ namespace TA_Comment_Generator
                 //Add all of the checked boxes comments to the generated comment. 
                 if (box.Checked == true) 
                 {
+                    //TODO: Add comment priority check here. 
                     comment += cg.GetComment(box.Text) + "\n";
                 }
             }
@@ -120,35 +132,9 @@ namespace TA_Comment_Generator
             //Add what is in the comment text box to the generated comment
             comment += this.commentTxtBox.Text + "\n";
 
-            //Due to the nature of comments 7 and 8, if they are checked I want them to be included at the end. 
-            if (checkBox7.Checked == true)
-                comment += startEarlyNextTime + "\n";
-            if (checkBox8.Checked == true)
-                comment += wellDone + "\n";
-
-
-            comment += "Please come see me in office hours if you have any questions about grading."; //An ending message. 
+            //TODO: Add an ending message?
+            //comment += "Please come see me in office hours if you have any questions about grading."; //An ending message. 
             this.commentTxtBox.Text = comment;
-        }
-
-        /**
-         * Creates and labels a new comment check box. The input for this must be very specifically formatted.
-         * The first line is the text that gets added to the check box and the second line is the  comment generated when the 
-         * check box is checked. 
-         */
-        private void NewComment_Click(object sender, EventArgs e)
-        {
-            //String[] comment = (commentTxtBox.Text).Split('\n');
-            //if (comment.Length < 2)
-            //{
-            //    commentTxtBox.Text = "please include the comment generated on the next line.";
-            //}
-            //else
-            //{
-            //    textFieldsArr.Add(comment[0]);
-            //    comments.Add(comment[1]);
-            //    UpdateDisplay();
-            //}
         }
 
         /**
@@ -193,6 +179,18 @@ namespace TA_Comment_Generator
                 cg = cg.ReadXml(filePath);
                 UpdateDisplay();
             }
+        }
+
+
+        /// <summary>
+        /// Adds a new check box and comment.
+        /// </summary>
+        private void addCheckBoxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //pop-up menu
+            CommentGeneratorApplicationContext.getAppContext().RunForm(new NewCheckBoxPopUp());
+           // SpreadsheetApplicationContext.getAppContext().RunForm(new HelpMenu());
+            //CheckBox ckb = createCheckBox();
         }
     }
 }

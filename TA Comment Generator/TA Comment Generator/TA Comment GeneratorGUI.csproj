@@ -52,10 +52,19 @@
     <Compile Include="CommentGeneratorGUI.Designer.cs">
       <DependentUpon>CommentGeneratorGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewCheckBoxPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewCheckBoxPopUp.Designer.cs">
+      <DependentUpon>NewCheckBoxPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CommentGeneratorGUI.resx">
       <DependentUpon>CommentGeneratorGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewCheckBoxPopUp.resx">
+      <DependentUpon>NewCheckBoxPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

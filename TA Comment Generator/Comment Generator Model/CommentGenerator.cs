@@ -53,7 +53,7 @@ namespace Comment_Generator_Model
             }
         }
 
-        public static IEnumerable<KeyValuePair<string, string>> getAllComments()
+        public IEnumerable<string> getAllCommentDisplays()
         {
             throw new NotImplementedException();
         }

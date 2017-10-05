@@ -42,7 +42,6 @@ namespace TA_Comment_Generator
             this.label1 = new System.Windows.Forms.Label();
             this.clear = new System.Windows.Forms.Button();
             this.CommentBoxPanel = new System.Windows.Forms.Panel();
-            this.NewComment = new System.Windows.Forms.Button();
             this.checkBoxPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.HelpButton = new System.Windows.Forms.Button();
@@ -60,7 +59,7 @@ namespace TA_Comment_Generator
             // 
             // generate_comment
             // 
-            this.generate_comment.Location = new System.Drawing.Point(454, 6);
+            this.generate_comment.Location = new System.Drawing.Point(190, 6);
             this.generate_comment.Margin = new System.Windows.Forms.Padding(6);
             this.generate_comment.Name = "generate_comment";
             this.generate_comment.Size = new System.Drawing.Size(254, 44);
@@ -94,7 +93,7 @@ namespace TA_Comment_Generator
             // 
             // clear
             // 
-            this.clear.Location = new System.Drawing.Point(720, 6);
+            this.clear.Location = new System.Drawing.Point(456, 6);
             this.clear.Margin = new System.Windows.Forms.Padding(6);
             this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(150, 44);
@@ -115,17 +114,6 @@ namespace TA_Comment_Generator
             this.CommentBoxPanel.Size = new System.Drawing.Size(441, 652);
             this.CommentBoxPanel.TabIndex = 25;
             // 
-            // NewComment
-            // 
-            this.NewComment.Location = new System.Drawing.Point(190, 6);
-            this.NewComment.Margin = new System.Windows.Forms.Padding(6);
-            this.NewComment.Name = "NewComment";
-            this.NewComment.Size = new System.Drawing.Size(252, 44);
-            this.NewComment.TabIndex = 27;
-            this.NewComment.Text = "create new comment";
-            this.NewComment.UseVisualStyleBackColor = true;
-            this.NewComment.Click += new System.EventHandler(this.NewComment_Click);
-            // 
             // checkBoxPanel
             // 
             this.checkBoxPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -141,7 +129,6 @@ namespace TA_Comment_Generator
             this.buttonLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonLayoutPanel.Controls.Add(this.HelpButton);
-            this.buttonLayoutPanel.Controls.Add(this.NewComment);
             this.buttonLayoutPanel.Controls.Add(this.generate_comment);
             this.buttonLayoutPanel.Controls.Add(this.clear);
             this.buttonLayoutPanel.Location = new System.Drawing.Point(12, 724);
@@ -169,7 +156,7 @@ namespace TA_Comment_Generator
             this.addCheckBoxToolStripMenuItem});
             this.fileManageMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.fileManageMenuStrip.Name = "fileManageMenuStrip";
-            this.fileManageMenuStrip.Size = new System.Drawing.Size(988, 40);
+            this.fileManageMenuStrip.Size = new System.Drawing.Size(988, 42);
             this.fileManageMenuStrip.TabIndex = 31;
             this.fileManageMenuStrip.Text = "menuStrip1";
             // 
@@ -210,8 +197,9 @@ namespace TA_Comment_Generator
             // addCheckBoxToolStripMenuItem
             // 
             this.addCheckBoxToolStripMenuItem.Name = "addCheckBoxToolStripMenuItem";
-            this.addCheckBoxToolStripMenuItem.Size = new System.Drawing.Size(188, 36);
-            this.addCheckBoxToolStripMenuItem.Text = "Add Check Box";
+            this.addCheckBoxToolStripMenuItem.Size = new System.Drawing.Size(264, 38);
+            this.addCheckBoxToolStripMenuItem.Text = "Create New Comment";
+            this.addCheckBoxToolStripMenuItem.Click += new System.EventHandler(this.addCheckBoxToolStripMenuItem_Click);
             // 
             // CommentGeneratorGUI
             // 
@@ -243,7 +231,6 @@ namespace TA_Comment_Generator
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button clear;
         private Panel CommentBoxPanel;
-        private Button NewComment;
         private FlowLayoutPanel checkBoxPanel;
         private FlowLayoutPanel buttonLayoutPanel;
         private Button HelpButton;
