@@ -31,8 +31,6 @@ namespace TA_Comment_Generator
         {
             cg = new CommentGenerator();
             InitializeComponent();
-            //CreateContainers();
-            //Setup();
             //UpdateDisplay();
         }
 
@@ -42,15 +40,18 @@ namespace TA_Comment_Generator
         private void UpdateDisplay()
         {
             checkBoxes = new List<CheckBox>();
+            checkBoxPanel.Controls.Clear();
 
             int height = 1;
+            int width = checkBoxPanel.Width-5;
             int padding = 10;
             int i = 0;
 
             foreach(string display in cg.getAllCommentDisplays())
             {
-                CheckBox ckb = createCheckBox(display, height, padding, i);
+                CheckBox ckb = createCheckBox(display, height, padding, width, i);
                 checkBoxPanel.Controls.Add(ckb);
+                checkBoxes.Add(ckb);
                 height += 22;
                 i++;
             }
@@ -60,52 +61,14 @@ namespace TA_Comment_Generator
         /// Creates a checkbox with the given properties. 
         /// </summary>
         /// <returns></returns>
-        private CheckBox createCheckBox(string Text, int height, int padding, int tabIndex)
+        private CheckBox createCheckBox(string Text, int height, int padding, int width, int tabIndex)
         {
             CheckBox ckb = new CheckBox();
             ckb.Text = Text;
             ckb.TabIndex = tabIndex;
             ckb.AutoCheck = true;
-            ckb.Bounds = new Rectangle(10, 20 + padding + height, 40, 22);
+            ckb.Bounds = new Rectangle(10, 20 + padding + height, width, 22);
             return ckb;
-        }
-
-        /*
-         * This is really dumb, there's got to be a collection of these from the frame. 
-         * How Can I do this better? 
-         */
-        private void CreateContainers()
-        {
-            /*
-            foreach (Control component in CheckBoxPanel.Controls)
-            {
-                if (component is CheckBox)
-                {
-                    checkboxes.Add((CheckBox)component);
-                }
-            }
-            foreach (Control component in panel1.Controls)
-            {
-                if(component is CheckBox)
-                {
-                    checkboxes.Add((CheckBox)component);
-                }
-            }
-            */
-        }
-
-        /**
-         * Sets up all of the comments to be generated and text for the checkBoxes. 
-         * 
-         * At some point, this should read lines from a text file... The first line will be the text shown next to the box. 
-         * The second line will be the comment generated when that box is checked.
-         */
-        private void Setup()
-        {
-            //Populate the GUI text of the checkBoxes. 
-            //Add labels to sections of comments?
-            //Create new comment?
-            //Open existing comments?
         }
 
         /**
@@ -136,21 +99,12 @@ namespace TA_Comment_Generator
         }
 
         /**
-         * Explains how to add a new comment. 
-         */
-        private void Help_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("To use the comment creation tool simply type the comment you'd like to generate in the text box.\nThe format is this:\n\n"
-                + "Text displayed next to check box\nComment generated when check box is clicked.\n\nBe sure to only include the text you'd like generated in the comment box.");
-        }
-
-        /**
          * Clear all of the check boxes and the comment text box. 
          */
         private void clear_Click(object sender, EventArgs e)
         {
             this.commentTxtBox.Text = "";
-            foreach (CheckBox cbox in checkboxes)
+            foreach (CheckBox cbox in checkBoxes)
             {
                 cbox.Checked = false;
             }
@@ -185,24 +139,40 @@ namespace TA_Comment_Generator
         /// </summary>
         private void addCheckBoxToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //pop-up menu
-            string display = "def1";
-            string hidden = "def2";
-            NewCheckBoxPopUp newBox = new NewCheckBoxPopUp(ref display, ref hidden);
-            //CommentGeneratorApplicationContext.getAppContext().RunForm(newBox);
-
-            // newBox.getValues(out display, out hidden);
-            //ThreadStart ts = new ThreadStart(newBox.Show);
-            //Thread th = new Thread(ts);
-            //th.Start();
+            NewCheckBoxPopUp newBox = new NewCheckBoxPopUp();
             newBox.ShowDialog(this);
-            //newBox.Show();
-            //while (newBox.accepted == false);
-            //th.Join();
-            //while (newBox.Visible == true);
-
             cg.AddComment(newBox.display, newBox.hidden);
             UpdateDisplay();
+        }
+
+
+        /// <summary>
+        /// Displays information about how to use the app to the user. 
+        /// </summary>
+        private void HelpButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("To use the comment creation tool simply type the comment you'd like to generate in the text box.\nThe format is this:\n\n"
+                + "Text displayed next to check box\nComment generated when check box is clicked.\n\nBe sure to only include the text you'd like generated in the comment box.");
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.DefaultExt = CG_EXT; //default file extension
+            dlg.Filter = DEFAULT_FILTER; //display only .cg files or All Files. 
+            //Open the given file. 
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                //Get the file path of the file selected. 
+                //String filePath = dlg.FileName;
+
+                //Ask the user to handle any unsaved changes, open the new file. 
+                //if (saveChanges == true)
+                //{
+                //    OpenFile(filePath);
+                //}
+                cg.WriteXml(dlg.FileName);
+            }
         }
     }
 }

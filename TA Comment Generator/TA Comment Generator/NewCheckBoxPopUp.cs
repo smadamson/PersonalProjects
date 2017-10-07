@@ -16,7 +16,7 @@ namespace TA_Comment_Generator
         public string hidden;
         public bool accepted = false;
 
-        public NewCheckBoxPopUp(ref string display, ref string hidden)
+        public NewCheckBoxPopUp()
         {
             InitializeComponent();
         }

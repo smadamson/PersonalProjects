@@ -76,7 +76,7 @@ namespace Comment_Generator_Model
         /// </summary>
         /// <param name="filePath"></param>
         /// <param name="content"></param>
-        public void WriteXml(string filePath, CommentGenerator content)
+        public void WriteXml(string filePath)
         {
             string fileName = Path.GetFileName(filePath);
             // We want some non-default settings for our XML writer.
@@ -116,16 +116,13 @@ namespace Comment_Generator_Model
             CommentGenerator ret = new CommentGenerator();
             using (XmlReader reader = XmlReader.Create(filePath))
             {
-                for(int i = 0; i<3; i++)
+                for(int i = 0; i<1; i++)
                 {
                     if (reader.IsStartElement())
                     {
                         switch (reader.Name)
                         {
                             case "CommentGenerator":
-                                break;
-                            case "version":
-                                reader.Read();
                                 break;
                             default:
                                 throw new Exception("Not a valid Xml file!");

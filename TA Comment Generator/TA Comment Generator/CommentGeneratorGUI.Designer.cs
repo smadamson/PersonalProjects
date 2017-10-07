@@ -145,6 +145,7 @@ namespace TA_Comment_Generator
             this.HelpButton.TabIndex = 28;
             this.HelpButton.Text = "Help!";
             this.HelpButton.UseVisualStyleBackColor = true;
+            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
             // 
             // fileManageMenuStrip
             // 
@@ -163,7 +164,7 @@ namespace TA_Comment_Generator
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(86, 36);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(86, 38);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -173,25 +174,26 @@ namespace TA_Comment_Generator
             this.saveAsToolStripMenuItem,
             this.saveToolStripMenuItem});
             this.saveToolStripMenuItemNonClick.Name = "saveToolStripMenuItemNonClick";
-            this.saveToolStripMenuItemNonClick.Size = new System.Drawing.Size(77, 36);
+            this.saveToolStripMenuItemNonClick.Size = new System.Drawing.Size(77, 38);
             this.saveToolStripMenuItemNonClick.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(211, 38);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
             this.saveAsToolStripMenuItem.Text = "Save As...";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(211, 38);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // insertLabelToolStripMenuItem
             // 
             this.insertLabelToolStripMenuItem.Name = "insertLabelToolStripMenuItem";
-            this.insertLabelToolStripMenuItem.Size = new System.Drawing.Size(144, 36);
+            this.insertLabelToolStripMenuItem.Size = new System.Drawing.Size(144, 38);
             this.insertLabelToolStripMenuItem.Text = "Insert label";
             // 
             // addCheckBoxToolStripMenuItem
