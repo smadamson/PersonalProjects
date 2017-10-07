@@ -14,18 +14,18 @@ namespace TA_Comment_Generator
 {
     public partial class CommentGeneratorGUI : Form
     {
-        String special_order_comments;
-        //String percent_Of_Grade_Analysis_Doc_Is_Worth = "30%";
-        CommentGenerator cg;
-        List<CheckBox> checkBoxes;
-
-
-        //file extension for a spreadsheet
-        private string CG_EXT = ".cg";
-
-        //filter for opening and saving spreadsheet files. 
-        private string DEFAULT_FILTER = "CommentGenerator Files (*.cg)|*.cg|All Files|*.*";
-
+        private string special_order_comments;
+        //private string percent_Of_Grade_Analysis_Doc_Is_Worth = "30%";
+        private CommentGenerator cg;
+        private List<CheckBox> checkBoxes;
+        private bool unsavedChanges = false;
+        private string currentFileName = "";
+        private static string CG_EXT = ".cg"; 
+        private static string DEFAULT_FILTER = "CommentGenerator Files (*.cg)|*.cg|All Files|*.*";
+        private static string HELP_MENU_MESSAGE = "To use the comment creation tool simply type the comment you'd like to generate in the text box.\nThe format is this:\n\n"
+                + "Text displayed next to check box\nComment generated when check box is clicked.\n\nBe sure to only include the text you'd like generated in the comment box.";
+        private static string SAVE_BEFORE_MESSAGE = "There may be unsaved changes in your comment generator." +
+            "\nWould you like to save?";
 
         public CommentGeneratorGUI()
         {
@@ -35,21 +35,21 @@ namespace TA_Comment_Generator
         }
 
         /// <summary>
-        /// Creates a checkbox for every comment in cg. 
+        /// Creates a checkbox for every comment in the commentGenerator. 
         /// </summary>
         private void UpdateDisplay()
         {
             checkBoxes = new List<CheckBox>();
-            checkBoxPanel.Controls.Clear();
+            ClearDisplay();
 
             int height = 1;
-            int width = checkBoxPanel.Width-5;
+            int width = checkBoxPanel.Width - 5;
             int padding = 10;
             int i = 0;
 
-            foreach(string display in cg.getAllCommentDisplays())
+            foreach (string display in cg.getAllCommentDisplays())
             {
-                CheckBox ckb = createCheckBox(display, height, padding, width, i);
+                CheckBox ckb = CreateCheckBox(display, height, padding, width, i);
                 checkBoxPanel.Controls.Add(ckb);
                 checkBoxes.Add(ckb);
                 height += 22;
@@ -58,10 +58,19 @@ namespace TA_Comment_Generator
         }
 
         /// <summary>
+        /// Clears elements from the display. This includes clearing the comment generated as well as
+        /// removing all check boxes. 
+        /// </summary>
+        private void ClearDisplay()
+        {
+            checkBoxPanel.Controls.Clear();
+            commentTxtBox.Clear();
+        }
+
+        /// <summary>
         /// Creates a checkbox with the given properties. 
         /// </summary>
-        /// <returns></returns>
-        private CheckBox createCheckBox(string Text, int height, int padding, int width, int tabIndex)
+        private CheckBox CreateCheckBox(string Text, int height, int padding, int width, int tabIndex)
         {
             CheckBox ckb = new CheckBox();
             ckb.Text = Text;
@@ -71,18 +80,14 @@ namespace TA_Comment_Generator
             return ckb;
         }
 
-        /**
-         * Generates the comment and displays it in the comment text box to the user. 
-         */
+        /// <summary>
+        /// Generates the comment and displays it in the comment text box to the user. 
+        /// </summary>
         private void generate_comment_Click(object sender, EventArgs e)
         {
-            //Create the comment to be generated. 
-            string comment = "";// disclaimer + "\n\n";
-
-            int i = 0;
+            string comment = "";
             foreach (CheckBox box in checkBoxes)
             {
-                //Add all of the checked boxes comments to the generated comment. 
                 if (box.Checked == true) 
                 {
                     //TODO: Add comment priority check here. 
@@ -98,9 +103,10 @@ namespace TA_Comment_Generator
             this.commentTxtBox.Text = comment;
         }
 
-        /**
-         * Clear all of the check boxes and the comment text box. 
-         */
+
+        /// <summary>
+        /// Clear all of the check boxes and the comment text box. 
+        /// </summary>
         private void clear_Click(object sender, EventArgs e)
         {
             this.commentTxtBox.Text = "";
@@ -110,29 +116,28 @@ namespace TA_Comment_Generator
             }
         }
 
+        /// <summary>
+        /// Opens an exisiting cg file. 
+        /// </summary>
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Open File dialog box
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.DefaultExt = CG_EXT; //default file extension
-            dlg.Filter = DEFAULT_FILTER; //display only .cg files or All Files. 
+            //is user has unsaved changes, prompt to save them.
+            if (unsavedChanges == true)
+            {
+                UnsavedChangesDialog();
+            }
 
-            //Open the given file. 
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.DefaultExt = CG_EXT;
+            dlg.Filter = DEFAULT_FILTER; 
+ 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                //Get the file path of the file selected. 
-                String filePath = dlg.FileName;
-
-                //Ask the user to handle any unsaved changes, open the new file. 
-                //if (saveChanges == true)
-                //{
-                //    OpenFile(filePath);
-                //}
-                cg = cg.ReadXml(filePath);
+                currentFileName = dlg.FileName;
+                cg = cg.ReadXml(currentFileName);
                 UpdateDisplay();
             }
         }
-
 
         /// <summary>
         /// Adds a new check box and comment.
@@ -143,6 +148,7 @@ namespace TA_Comment_Generator
             newBox.ShowDialog(this);
             cg.AddComment(newBox.display, newBox.hidden);
             UpdateDisplay();
+            unsavedChanges = true;
         }
 
 
@@ -151,27 +157,98 @@ namespace TA_Comment_Generator
         /// </summary>
         private void HelpButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("To use the comment creation tool simply type the comment you'd like to generate in the text box.\nThe format is this:\n\n"
-                + "Text displayed next to check box\nComment generated when check box is clicked.\n\nBe sure to only include the text you'd like generated in the comment box.");
+            MessageBox.Show(HELP_MENU_MESSAGE);
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SaveFileDialog();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            //If the file should be closed, close it. 
+            if (UnsavedChangesDialog() == true)
+            {
+                base.OnFormClosing(e);
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        /// <summary>
+        /// if the form has unsaved changes, prompts the user to either save, not save, or cancel. 
+        /// If save, save the file and return true. 
+        /// If not save, do nothing and return true.
+        /// if cancel, do nothing and return false.
+        /// </summary>
+        /// <returns>Returns false if user cancels dialog. True otherwise. </returns>
+        private bool UnsavedChangesDialog()
+        {
+            if (unsavedChanges)
+            {
+                DialogResult result = MessageBox.Show(SAVE_BEFORE_MESSAGE,
+                    "Close", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    Save();
+                    return true;
+                }
+                else if (result == DialogResult.No)
+                {
+                    return true;
+                }
+                else
+                {
+                    //if canceled return false. 
+                    return false;
+                }
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// Saves the current spreadsheet file by prompting the user with a SaveFileDialog box.  
+        /// </summary>
+        private void SaveFileDialog()
+        {
             SaveFileDialog dlg = new SaveFileDialog();
+            dlg.AddExtension = true;
             dlg.DefaultExt = CG_EXT; //default file extension
             dlg.Filter = DEFAULT_FILTER; //display only .cg files or All Files. 
             //Open the given file. 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                //Get the file path of the file selected. 
-                //String filePath = dlg.FileName;
-
-                //Ask the user to handle any unsaved changes, open the new file. 
-                //if (saveChanges == true)
-                //{
-                //    OpenFile(filePath);
-                //}
+                currentFileName = dlg.FileName;
                 cg.WriteXml(dlg.FileName);
+                unsavedChanges = false;
+            }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Save();
+        }
+
+        /// <summary>
+        /// Saves the file to the currentFileName if one has been set. Otherwise performs a "save as".
+        /// </summary>
+        private void Save()
+        {
+            if (currentFileName.Equals(""))
+            {
+                //User has not done a "save as" yet. They need to name their file!  
+                SaveFileDialog();
+            }
+            else
+            {
+                cg.WriteXml(currentFileName);
+                unsavedChanges = false;
             }
         }
     }
