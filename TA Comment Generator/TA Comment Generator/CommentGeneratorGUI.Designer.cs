@@ -39,7 +39,7 @@ namespace TA_Comment_Generator
         {
             this.generate_comment = new System.Windows.Forms.Button();
             this.commentTxtBox = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.customCommentsLabel = new System.Windows.Forms.Label();
             this.clear = new System.Windows.Forms.Button();
             this.CommentBoxPanel = new System.Windows.Forms.Panel();
             this.checkBoxPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -52,6 +52,8 @@ namespace TA_Comment_Generator
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insertLabelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCheckBoxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customCommentBox = new System.Windows.Forms.RichTextBox();
+            this.keepCustomOnClearBox = new System.Windows.Forms.CheckBox();
             this.CommentBoxPanel.SuspendLayout();
             this.buttonLayoutPanel.SuspendLayout();
             this.fileManageMenuStrip.SuspendLayout();
@@ -74,22 +76,24 @@ namespace TA_Comment_Generator
             this.commentTxtBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.commentTxtBox.Location = new System.Drawing.Point(0, 39);
+            this.commentTxtBox.Location = new System.Drawing.Point(0, 221);
             this.commentTxtBox.Margin = new System.Windows.Forms.Padding(6);
             this.commentTxtBox.Name = "commentTxtBox";
-            this.commentTxtBox.Size = new System.Drawing.Size(441, 613);
+            this.commentTxtBox.ReadOnly = true;
+            this.commentTxtBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.commentTxtBox.Size = new System.Drawing.Size(441, 431);
             this.commentTxtBox.TabIndex = 10;
             this.commentTxtBox.Text = "";
             // 
-            // label1
+            // customCommentsLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 8);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(264, 25);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Add other comments here:";
+            this.customCommentsLabel.AutoSize = true;
+            this.customCommentsLabel.Location = new System.Drawing.Point(6, 8);
+            this.customCommentsLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.customCommentsLabel.Name = "customCommentsLabel";
+            this.customCommentsLabel.Size = new System.Drawing.Size(224, 25);
+            this.customCommentsLabel.TabIndex = 11;
+            this.customCommentsLabel.Text = "Add custom comment:";
             // 
             // clear
             // 
@@ -106,8 +110,10 @@ namespace TA_Comment_Generator
             // 
             this.CommentBoxPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.CommentBoxPanel.Controls.Add(this.keepCustomOnClearBox);
+            this.CommentBoxPanel.Controls.Add(this.customCommentBox);
             this.CommentBoxPanel.Controls.Add(this.commentTxtBox);
-            this.CommentBoxPanel.Controls.Add(this.label1);
+            this.CommentBoxPanel.Controls.Add(this.customCommentsLabel);
             this.CommentBoxPanel.Location = new System.Drawing.Point(529, 46);
             this.CommentBoxPanel.Margin = new System.Windows.Forms.Padding(6);
             this.CommentBoxPanel.Name = "CommentBoxPanel";
@@ -157,14 +163,14 @@ namespace TA_Comment_Generator
             this.addCheckBoxToolStripMenuItem});
             this.fileManageMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.fileManageMenuStrip.Name = "fileManageMenuStrip";
-            this.fileManageMenuStrip.Size = new System.Drawing.Size(988, 42);
+            this.fileManageMenuStrip.Size = new System.Drawing.Size(988, 40);
             this.fileManageMenuStrip.TabIndex = 31;
             this.fileManageMenuStrip.Text = "menuStrip1";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(86, 38);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(86, 36);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -174,7 +180,7 @@ namespace TA_Comment_Generator
             this.saveAsToolStripMenuItem,
             this.saveToolStripMenuItem});
             this.saveToolStripMenuItemNonClick.Name = "saveToolStripMenuItemNonClick";
-            this.saveToolStripMenuItemNonClick.Size = new System.Drawing.Size(77, 38);
+            this.saveToolStripMenuItemNonClick.Size = new System.Drawing.Size(77, 36);
             this.saveToolStripMenuItemNonClick.Text = "Save";
             // 
             // saveAsToolStripMenuItem
@@ -194,15 +200,33 @@ namespace TA_Comment_Generator
             // insertLabelToolStripMenuItem
             // 
             this.insertLabelToolStripMenuItem.Name = "insertLabelToolStripMenuItem";
-            this.insertLabelToolStripMenuItem.Size = new System.Drawing.Size(144, 38);
+            this.insertLabelToolStripMenuItem.Size = new System.Drawing.Size(144, 36);
             this.insertLabelToolStripMenuItem.Text = "Insert label";
             // 
             // addCheckBoxToolStripMenuItem
             // 
             this.addCheckBoxToolStripMenuItem.Name = "addCheckBoxToolStripMenuItem";
-            this.addCheckBoxToolStripMenuItem.Size = new System.Drawing.Size(264, 38);
+            this.addCheckBoxToolStripMenuItem.Size = new System.Drawing.Size(264, 36);
             this.addCheckBoxToolStripMenuItem.Text = "Create New Comment";
             this.addCheckBoxToolStripMenuItem.Click += new System.EventHandler(this.addCheckBoxToolStripMenuItem_Click);
+            // 
+            // customCommentBox
+            // 
+            this.customCommentBox.Location = new System.Drawing.Point(3, 36);
+            this.customCommentBox.Name = "customCommentBox";
+            this.customCommentBox.Size = new System.Drawing.Size(438, 176);
+            this.customCommentBox.TabIndex = 12;
+            this.customCommentBox.Text = "";
+            // 
+            // keepCustomOnClearBox
+            // 
+            this.keepCustomOnClearBox.AutoSize = true;
+            this.keepCustomOnClearBox.Location = new System.Drawing.Point(262, 4);
+            this.keepCustomOnClearBox.Name = "keepCustomOnClearBox";
+            this.keepCustomOnClearBox.Size = new System.Drawing.Size(143, 29);
+            this.keepCustomOnClearBox.TabIndex = 13;
+            this.keepCustomOnClearBox.Text = "don\'t clear";
+            this.keepCustomOnClearBox.UseVisualStyleBackColor = true;
             // 
             // CommentGeneratorGUI
             // 
@@ -231,7 +255,7 @@ namespace TA_Comment_Generator
         #endregion
         private System.Windows.Forms.Button generate_comment;
         private System.Windows.Forms.RichTextBox commentTxtBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label customCommentsLabel;
         private System.Windows.Forms.Button clear;
         private Panel CommentBoxPanel;
         private FlowLayoutPanel checkBoxPanel;
@@ -244,6 +268,8 @@ namespace TA_Comment_Generator
         private ToolStripMenuItem addCheckBoxToolStripMenuItem;
         private ToolStripMenuItem saveAsToolStripMenuItem;
         private ToolStripMenuItem saveToolStripMenuItem;
+        private RichTextBox customCommentBox;
+        private CheckBox keepCustomOnClearBox;
     }
 }
 

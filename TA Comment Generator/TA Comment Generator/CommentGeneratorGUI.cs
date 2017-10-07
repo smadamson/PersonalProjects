@@ -31,7 +31,7 @@ namespace TA_Comment_Generator
         {
             cg = new CommentGenerator();
             InitializeComponent();
-            //UpdateDisplay();
+            UpdateDisplay();
         }
 
         /// <summary>
@@ -65,6 +65,8 @@ namespace TA_Comment_Generator
         {
             checkBoxPanel.Controls.Clear();
             commentTxtBox.Clear();
+            commentTxtBox.ReadOnly = true;
+            customCommentBox.Clear();
         }
 
         /// <summary>
@@ -85,6 +87,7 @@ namespace TA_Comment_Generator
         /// </summary>
         private void generate_comment_Click(object sender, EventArgs e)
         {
+            commentTxtBox.Clear();  
             string comment = "";
             foreach (CheckBox box in checkBoxes)
             {
@@ -96,11 +99,14 @@ namespace TA_Comment_Generator
             }
 
             //Add what is in the comment text box to the generated comment
-            comment += this.commentTxtBox.Text + "\n";
+            comment += customCommentBox.Text + "\n";
 
             //TODO: Add an ending message?
             //comment += "Please come see me in office hours if you have any questions about grading."; //An ending message. 
-            this.commentTxtBox.Text = comment;
+            commentTxtBox.Text = comment;
+
+            //Set the comment box to be editable so that users can edit inside the app. 
+            commentTxtBox.ReadOnly = false;
         }
 
 
@@ -109,10 +115,16 @@ namespace TA_Comment_Generator
         /// </summary>
         private void clear_Click(object sender, EventArgs e)
         {
-            this.commentTxtBox.Text = "";
             foreach (CheckBox cbox in checkBoxes)
             {
                 cbox.Checked = false;
+            }
+            commentTxtBox.Clear();
+            commentTxtBox.ReadOnly = true;
+
+            if(keepCustomOnClearBox.Checked == false)
+            {
+                customCommentBox.Clear();
             }
         }
 
@@ -124,7 +136,7 @@ namespace TA_Comment_Generator
             //is user has unsaved changes, prompt to save them.
             if (unsavedChanges == true)
             {
-                UnsavedChangesDialog();
+                Save();
             }
 
             OpenFileDialog dlg = new OpenFileDialog();
@@ -146,9 +158,13 @@ namespace TA_Comment_Generator
         {
             NewCheckBoxPopUp newBox = new NewCheckBoxPopUp();
             newBox.ShowDialog(this);
-            cg.AddComment(newBox.display, newBox.hidden);
-            UpdateDisplay();
-            unsavedChanges = true;
+            //How do I know which button was pressed?? If canceled I dont want to do anything!!
+            if (newBox.accepted)
+            {
+                cg.AddComment(newBox.display, newBox.hidden);
+                UpdateDisplay();
+                unsavedChanges = true;
+            }
         }
 
 
@@ -165,6 +181,9 @@ namespace TA_Comment_Generator
             SaveFileDialog();
         }
 
+        /// <summary>
+        /// Called before close(). Asks the user to save any unsaved changes. 
+        /// </summary>
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             //If the file should be closed, close it. 
