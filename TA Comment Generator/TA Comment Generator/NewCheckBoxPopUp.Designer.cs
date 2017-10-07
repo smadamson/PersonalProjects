@@ -76,6 +76,7 @@
             this.acceptButton.TabIndex = 4;
             this.acceptButton.Text = "Accept";
             this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
             // 
             // NewCheckBoxPopUp
             // 

@@ -31,7 +31,7 @@ namespace TA_Comment_Generator
         public CommentGeneratorGUI()
         {
             cg = new CommentGenerator();
-            //InitializeComponent();
+            InitializeComponent();
             //CreateContainers();
             //Setup();
             //UpdateDisplay();
@@ -188,8 +188,10 @@ namespace TA_Comment_Generator
         private void addCheckBoxToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //pop-up menu
-            CommentGeneratorApplicationContext.getAppContext().RunForm(new NewCheckBoxPopUp());
-           // SpreadsheetApplicationContext.getAppContext().RunForm(new HelpMenu());
+            //CommentGeneratorApplicationContext.getAppContext().RunForm(new NewCheckBoxPopUp());
+            NewCheckBoxPopUp newBox = new NewCheckBoxPopUp();
+            newBox.Show();
+            //SpreadsheetApplicationContext.getAppContext().RunForm(new HelpMenu());
             //CheckBox ckb = createCheckBox();
         }
     }

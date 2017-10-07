@@ -65,6 +65,7 @@ namespace TA_Comment_Generator
             Application.SetCompatibleTextRenderingDefault(false);
 
             CommentGeneratorApplicationContext appContext = CommentGeneratorApplicationContext.getAppContext();
+            appContext.RunForm(new CommentGeneratorGUI());
             Application.Run(appContext);
         }
     }

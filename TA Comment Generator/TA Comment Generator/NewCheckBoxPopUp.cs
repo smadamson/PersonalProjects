@@ -16,5 +16,10 @@ namespace TA_Comment_Generator
         {
             InitializeComponent();
         }
+
+        private void acceptButton_Click(object sender, EventArgs e)
+        {
+            //Send info back to other form...
+        }
     }
 }
