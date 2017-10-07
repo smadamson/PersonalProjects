@@ -44,6 +44,11 @@ namespace Comment_Generator_Model
             }
         }
 
+        internal IEnumerable<string> getAllCommentDisplays()
+        {
+            return DisplayValToFullComment.Keys;
+        }
+
         /// <summary>
         /// Writes the Xml for a single comment. Should look something like this:
         /// (comment)

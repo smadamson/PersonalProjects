@@ -53,9 +53,13 @@ namespace Comment_Generator_Model
             }
         }
 
+        /// <summary>
+        /// Returns a collection of all display value comments. 
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<string> getAllCommentDisplays()
         {
-            throw new NotImplementedException();
+            return comments.getAllCommentDisplays();
         }
 
         /// <summary>
@@ -112,6 +116,23 @@ namespace Comment_Generator_Model
             CommentGenerator ret = new CommentGenerator();
             using (XmlReader reader = XmlReader.Create(filePath))
             {
+                for(int i = 0; i<3; i++)
+                {
+                    if (reader.IsStartElement())
+                    {
+                        switch (reader.Name)
+                        {
+                            case "CommentGenerator":
+                                break;
+                            case "version":
+                                reader.Read();
+                                break;
+                            default:
+                                throw new Exception("Not a valid Xml file!");
+                        }
+                    }
+                    reader.Read();
+                }
                 ret.comments = comments.ReadCommentsXml(reader);
                 return ret;
             }

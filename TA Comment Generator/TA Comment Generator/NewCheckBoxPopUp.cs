@@ -12,7 +12,11 @@ namespace TA_Comment_Generator
 {
     public partial class NewCheckBoxPopUp : Form
     {
-        public NewCheckBoxPopUp()
+        public string display;
+        public string hidden;
+        public bool accepted = false;
+
+        public NewCheckBoxPopUp(ref string display, ref string hidden)
         {
             InitializeComponent();
         }
@@ -20,6 +24,10 @@ namespace TA_Comment_Generator
         private void acceptButton_Click(object sender, EventArgs e)
         {
             //Send info back to other form...
+            display = displayValueBox.Text;
+            hidden = commentGeneratedBox.Text;
+            accepted = true;
+            Close();
         }
     }
 }

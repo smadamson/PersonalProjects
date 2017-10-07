@@ -8,16 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Comment_Generator_Model;
+using System.Threading;
 
 namespace TA_Comment_Generator
 {
     public partial class CommentGeneratorGUI : Form
     {
         String special_order_comments;
-        String percent_Of_Grade_Analysis_Doc_Is_Worth = "30%";
+        //String percent_Of_Grade_Analysis_Doc_Is_Worth = "30%";
         CommentGenerator cg;
-        int boxOrder = 0;
-
         List<CheckBox> checkBoxes;
 
 
@@ -46,11 +45,11 @@ namespace TA_Comment_Generator
 
             int height = 1;
             int padding = 10;
-
             int i = 0;
+
             foreach(string display in cg.getAllCommentDisplays())
             {
-                CheckBox ckb = createCheckBox(display, display, height, padding, i);
+                CheckBox ckb = createCheckBox(display, height, padding, i);
                 checkBoxPanel.Controls.Add(ckb);
                 height += 22;
                 i++;
@@ -61,10 +60,9 @@ namespace TA_Comment_Generator
         /// Creates a checkbox with the given properties. 
         /// </summary>
         /// <returns></returns>
-        private CheckBox createCheckBox(string Name, string Text, int height, int padding, int tabIndex)
+        private CheckBox createCheckBox(string Text, int height, int padding, int tabIndex)
         {
             CheckBox ckb = new CheckBox();
-            ckb.Name = Name;
             ckb.Text = Text;
             ckb.TabIndex = tabIndex;
             ckb.AutoCheck = true;
@@ -188,11 +186,23 @@ namespace TA_Comment_Generator
         private void addCheckBoxToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //pop-up menu
-            //CommentGeneratorApplicationContext.getAppContext().RunForm(new NewCheckBoxPopUp());
-            NewCheckBoxPopUp newBox = new NewCheckBoxPopUp();
-            newBox.Show();
-            //SpreadsheetApplicationContext.getAppContext().RunForm(new HelpMenu());
-            //CheckBox ckb = createCheckBox();
+            string display = "def1";
+            string hidden = "def2";
+            NewCheckBoxPopUp newBox = new NewCheckBoxPopUp(ref display, ref hidden);
+            //CommentGeneratorApplicationContext.getAppContext().RunForm(newBox);
+
+            // newBox.getValues(out display, out hidden);
+            //ThreadStart ts = new ThreadStart(newBox.Show);
+            //Thread th = new Thread(ts);
+            //th.Start();
+            newBox.ShowDialog(this);
+            //newBox.Show();
+            //while (newBox.accepted == false);
+            //th.Join();
+            //while (newBox.Visible == true);
+
+            cg.AddComment(newBox.display, newBox.hidden);
+            UpdateDisplay();
         }
     }
 }
