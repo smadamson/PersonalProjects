@@ -1,0 +1,7 @@
+[package]
+name = "hello_world"
+version = "0.1.0"
+authors = ["Sara Adamson <sara.adamson@insidesales.com>"]
+
+[dependencies]
+rand = "0.3.14"
