@@ -1,7 +1,5 @@
 extern crate rand;
 
-use std::rand::random;
-
 fn main() {
     println!("Welcome to password generator!");
 
@@ -30,9 +28,9 @@ fn main() {
     println!("Your password is...\n{}", generate_password(length, site));
 }
 
-fn generate_password(length: u32, site: String) -> String {
+fn generate_password(length: u32, _site: String) -> String {
     let mut string = String::new();
-    for _ in (0..length) {
+    for _ in 0..length {
         string.push(rand::random::<u8>() as char);
     }
     string
